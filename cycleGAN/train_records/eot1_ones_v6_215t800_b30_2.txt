@@ -1,0 +1,2030 @@
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+dataset [UnalignedDataset] was created
+The number of training images = 49
+initialize network with normal
+initialize network with normal
+initialize network with normal
+model [AttackEtTarGANModel] was created
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 7.838 M
+[Network D_A] Total number of parameters : 2.765 M
+-----------------------------------------------
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+dataset [UnalignedDataset] was created
+The number of training images = 49
+initialize network with normal
+initialize network with normal
+initialize network with normal
+model [AttackEtTarGANModel] was created
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 7.838 M
+[Network D_A] Total number of parameters : 2.765 M
+-----------------------------------------------
+Exception in user code:
+------------------------------------------------------------
+
+
+Could not connect to Visdom server. 
+ Trying to start a server....
+Command: /home/fengww/miniconda3/envs/torch3.6/bin/python -m visdom.server -p 8097 &>/dev/null &
+create web directory ./checkpoints/eot1_ones_v6_215t800_b30_2/web...
+End of epoch 1 / 200 	 Time Taken: 40 sec
+learning rate = 0.0002000
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+dataset [UnalignedDataset] was created
+The number of training images = 49
+initialize network with normal
+initialize network with normal
+initialize network with normal
+model [AttackEtTarGANModel] was created
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 7.838 M
+[Network D_A] Total number of parameters : 2.765 M
+-----------------------------------------------
+create web directory ./checkpoints/eot1_ones_v6_215t800_b30_2/web...
+End of epoch 1 / 200 	 Time Taken: 40 sec
+learning rate = 0.0002000
+End of epoch 2 / 200 	 Time Taken: 34 sec
+learning rate = 0.0002000
+(epoch: 3, iters: 2, time: 0.706, data: 0.073) D_A: 1.161 G_A: 1.354 idt_A: 0.893 G_ATTACK: 0.001 distance: 0.000 
+End of epoch 3 / 200 	 Time Taken: 34 sec
+learning rate = 0.0002000
+End of epoch 4 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 5, iters: 4, time: 0.723, data: 0.000) D_A: 0.211 G_A: 0.355 idt_A: 1.089 G_ATTACK: -29.877 distance: 0.000 
+End of epoch 5 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 6 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 7, iters: 6, time: 0.721, data: 0.003) D_A: 0.132 G_A: 0.571 idt_A: 0.918 G_ATTACK: -29.992 distance: 0.000 
+End of epoch 7 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 8 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 9, iters: 8, time: 0.844, data: 0.000) D_A: 0.278 G_A: 0.258 idt_A: 0.886 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 9 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 10 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 11, iters: 10, time: 0.724, data: 0.000) D_A: 0.231 G_A: 1.270 idt_A: 1.642 G_ATTACK: -29.824 distance: 0.000 
+End of epoch 11 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 12 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 13, iters: 12, time: 0.726, data: 0.001) D_A: 0.163 G_A: 0.972 idt_A: 1.001 G_ATTACK: -29.929 distance: 0.000 
+End of epoch 13 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 14 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 15, iters: 14, time: 0.723, data: 0.001) D_A: 0.139 G_A: 0.401 idt_A: 0.961 G_ATTACK: -29.657 distance: 0.000 
+End of epoch 15 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 16 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 17, iters: 16, time: 0.854, data: 0.001) D_A: 0.123 G_A: 0.626 idt_A: 0.760 G_ATTACK: -29.995 distance: 0.000 
+End of epoch 17 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 18 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 19, iters: 18, time: 0.726, data: 0.001) D_A: 0.162 G_A: 0.265 idt_A: 0.715 G_ATTACK: -29.841 distance: 0.000 
+End of epoch 19 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 20 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 21, iters: 20, time: 0.724, data: 0.001) D_A: 0.167 G_A: 0.901 idt_A: 0.746 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 21 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 22 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 23, iters: 22, time: 0.729, data: 0.001) D_A: 0.204 G_A: 0.398 idt_A: 0.743 G_ATTACK: -29.947 distance: 0.000 
+End of epoch 23 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 24 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 25, iters: 24, time: 0.876, data: 0.001) D_A: 0.028 G_A: 0.589 idt_A: 1.056 G_ATTACK: -29.632 distance: 0.000 
+End of epoch 25 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 26 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 27, iters: 26, time: 0.726, data: 0.001) D_A: 0.142 G_A: 0.743 idt_A: 0.855 G_ATTACK: -29.459 distance: 0.000 
+End of epoch 27 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 28 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 29, iters: 28, time: 0.726, data: 0.001) D_A: 0.139 G_A: 0.338 idt_A: 0.774 G_ATTACK: -29.986 distance: 0.000 
+End of epoch 29 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 30 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 31, iters: 30, time: 0.724, data: 0.001) D_A: 0.204 G_A: 0.444 idt_A: 0.771 G_ATTACK: -29.944 distance: 0.000 
+End of epoch 31 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 32 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 33, iters: 32, time: 0.881, data: 0.001) D_A: 0.085 G_A: 0.485 idt_A: 0.731 G_ATTACK: -29.866 distance: 0.000 
+End of epoch 33 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 34 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 35, iters: 34, time: 0.723, data: 0.001) D_A: 0.172 G_A: 0.267 idt_A: 0.720 G_ATTACK: -29.992 distance: 0.000 
+End of epoch 35 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 36 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 37, iters: 36, time: 0.727, data: 0.001) D_A: 0.141 G_A: 0.126 idt_A: 0.610 G_ATTACK: -29.971 distance: 0.000 
+End of epoch 37 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 38 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 39, iters: 38, time: 0.722, data: 0.001) D_A: 0.047 G_A: 0.453 idt_A: 0.589 G_ATTACK: -29.997 distance: 0.000 
+End of epoch 39 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 40 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 41, iters: 40, time: 0.899, data: 0.001) D_A: 0.168 G_A: 0.233 idt_A: 0.571 G_ATTACK: -29.904 distance: 0.000 
+End of epoch 41 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 42 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 43, iters: 42, time: 0.725, data: 0.001) D_A: 0.122 G_A: 1.134 idt_A: 0.758 G_ATTACK: -29.984 distance: 0.000 
+End of epoch 43 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 44 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 45, iters: 44, time: 0.725, data: 0.001) D_A: 0.103 G_A: 0.431 idt_A: 0.519 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 45 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 46 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 47, iters: 46, time: 0.726, data: 0.001) D_A: 0.157 G_A: 0.748 idt_A: 0.474 G_ATTACK: -29.837 distance: 0.000 
+End of epoch 47 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 48 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 49, iters: 48, time: 0.911, data: 0.001) D_A: 0.183 G_A: 0.204 idt_A: 0.484 G_ATTACK: -29.886 distance: 0.000 
+End of epoch 49 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 50 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 51 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 52, iters: 1, time: 0.727, data: 0.001) D_A: 0.186 G_A: 0.351 idt_A: 0.491 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 52 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 53 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 54, iters: 3, time: 0.724, data: 0.002) D_A: 0.261 G_A: 0.914 idt_A: 0.416 G_ATTACK: -29.985 distance: 0.000 
+End of epoch 54 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 55 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 56, iters: 5, time: 0.724, data: 0.000) D_A: 0.170 G_A: 1.080 idt_A: 0.403 G_ATTACK: -29.995 distance: 0.000 
+End of epoch 56 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 57 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 58, iters: 7, time: 0.935, data: 0.001) D_A: 0.135 G_A: 0.119 idt_A: 0.389 G_ATTACK: -29.924 distance: 0.000 
+End of epoch 58 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 59 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 60, iters: 9, time: 0.721, data: 0.001) D_A: 0.182 G_A: 1.032 idt_A: 1.143 G_ATTACK: -29.983 distance: 0.000 
+End of epoch 60 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 61 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 62, iters: 11, time: 0.722, data: 0.001) D_A: 0.020 G_A: 0.984 idt_A: 0.788 G_ATTACK: -29.966 distance: 0.000 
+End of epoch 62 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 63 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 64, iters: 13, time: 0.723, data: 0.001) D_A: 0.082 G_A: 0.950 idt_A: 0.710 G_ATTACK: -29.798 distance: 0.000 
+End of epoch 64 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 65 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 66, iters: 15, time: 0.948, data: 0.001) D_A: 0.010 G_A: 0.855 idt_A: 0.717 G_ATTACK: -29.982 distance: 0.000 
+End of epoch 66 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 67 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 68, iters: 17, time: 0.730, data: 0.001) D_A: 0.039 G_A: 0.583 idt_A: 0.642 G_ATTACK: -29.843 distance: 0.000 
+End of epoch 68 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 69 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 70, iters: 19, time: 0.728, data: 0.001) D_A: 0.034 G_A: 1.093 idt_A: 0.692 G_ATTACK: -29.980 distance: 0.000 
+End of epoch 70 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 71 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 72, iters: 21, time: 0.728, data: 0.001) D_A: 0.185 G_A: 0.444 idt_A: 0.680 G_ATTACK: -29.685 distance: 0.000 
+End of epoch 72 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 73 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 74, iters: 23, time: 0.962, data: 0.001) D_A: 0.013 G_A: 1.022 idt_A: 0.663 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 74 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 75 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 76, iters: 25, time: 0.731, data: 0.001) D_A: 0.249 G_A: 0.191 idt_A: 0.589 G_ATTACK: -29.994 distance: 0.000 
+End of epoch 76 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 77 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 78, iters: 27, time: 0.728, data: 0.001) D_A: 0.014 G_A: 0.760 idt_A: 0.522 G_ATTACK: -29.980 distance: 0.000 
+End of epoch 78 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 79 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 80, iters: 29, time: 0.728, data: 0.001) D_A: 0.052 G_A: 0.667 idt_A: 0.471 G_ATTACK: -29.972 distance: 0.000 
+End of epoch 80 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 81 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 82, iters: 31, time: 0.972, data: 0.001) D_A: 0.081 G_A: 0.869 idt_A: 0.490 G_ATTACK: -29.957 distance: 0.000 
+End of epoch 82 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 83 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 84, iters: 33, time: 0.729, data: 0.001) D_A: 0.107 G_A: 0.342 idt_A: 0.413 G_ATTACK: -29.940 distance: 0.000 
+End of epoch 84 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 85 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 86, iters: 35, time: 0.730, data: 0.001) D_A: 0.078 G_A: 1.275 idt_A: 0.550 G_ATTACK: -29.911 distance: 0.000 
+End of epoch 86 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 87 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 88, iters: 37, time: 0.723, data: 0.001) D_A: 0.046 G_A: 0.638 idt_A: 0.403 G_ATTACK: -29.990 distance: 0.000 
+End of epoch 88 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 89 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 90, iters: 39, time: 1.017, data: 0.001) D_A: 0.049 G_A: 0.532 idt_A: 0.386 G_ATTACK: -29.872 distance: 0.000 
+End of epoch 90 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 91 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 92, iters: 41, time: 0.728, data: 0.001) D_A: 0.044 G_A: 0.791 idt_A: 0.377 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 92 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 93 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 94, iters: 43, time: 0.729, data: 0.001) D_A: 0.198 G_A: 0.624 idt_A: 0.378 G_ATTACK: -29.854 distance: 0.000 
+End of epoch 94 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 95 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 96, iters: 45, time: 0.729, data: 0.001) D_A: 0.051 G_A: 0.662 idt_A: 0.560 G_ATTACK: -29.966 distance: 0.000 
+End of epoch 96 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 97 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 98, iters: 47, time: 1.007, data: 0.001) D_A: 0.035 G_A: 0.859 idt_A: 0.377 G_ATTACK: -29.990 distance: 0.000 
+End of epoch 98 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 99 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 100, iters: 49, time: 0.730, data: 0.001) D_A: 0.025 G_A: 0.930 idt_A: 0.379 G_ATTACK: -29.991 distance: 0.000 
+saving the model at the end of epoch 100, iters 4900
+End of epoch 100 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001980
+End of epoch 101 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001960
+End of epoch 102 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001941
+(epoch: 103, iters: 2, time: 0.729, data: 0.093) D_A: 0.057 G_A: 0.425 idt_A: 0.364 G_ATTACK: -29.981 distance: 0.000 
+saving the latest model (epoch 103, total_iters 5000)
+End of epoch 103 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001921
+End of epoch 104 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001901
+(epoch: 105, iters: 4, time: 0.733, data: 0.000) D_A: 0.075 G_A: 1.207 idt_A: 1.161 G_ATTACK: -29.971 distance: 0.000 
+End of epoch 105 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001881
+End of epoch 106 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001861
+(epoch: 107, iters: 6, time: 1.029, data: 0.003) D_A: 0.010 G_A: 1.071 idt_A: 0.771 G_ATTACK: -29.948 distance: 0.000 
+End of epoch 107 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001842
+End of epoch 108 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001822
+(epoch: 109, iters: 8, time: 0.729, data: 0.000) D_A: 0.015 G_A: 0.950 idt_A: 0.683 G_ATTACK: -29.994 distance: 0.000 
+End of epoch 109 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001802
+End of epoch 110 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001782
+(epoch: 111, iters: 10, time: 0.724, data: 0.001) D_A: 0.016 G_A: 0.965 idt_A: 0.643 G_ATTACK: -29.982 distance: 0.000 
+End of epoch 111 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001762
+End of epoch 112 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001743
+(epoch: 113, iters: 12, time: 0.726, data: 0.001) D_A: 0.005 G_A: 1.003 idt_A: 0.586 G_ATTACK: -29.969 distance: 0.000 
+End of epoch 113 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001723
+End of epoch 114 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001703
+(epoch: 115, iters: 14, time: 1.042, data: 0.001) D_A: 0.004 G_A: 0.965 idt_A: 0.542 G_ATTACK: -29.905 distance: 0.000 
+End of epoch 115 / 200 	 Time Taken: 36 sec
+learning rate = 0.0001683
+End of epoch 116 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001663
+(epoch: 117, iters: 16, time: 0.728, data: 0.001) D_A: 0.011 G_A: 0.981 idt_A: 0.586 G_ATTACK: -29.854 distance: 0.000 
+End of epoch 117 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001644
+End of epoch 118 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001624
+(epoch: 119, iters: 18, time: 0.725, data: 0.001) D_A: 0.006 G_A: 0.688 idt_A: 0.568 G_ATTACK: -29.509 distance: 0.000 
+End of epoch 119 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001604
+End of epoch 120 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001584
+(epoch: 121, iters: 20, time: 0.725, data: 0.001) D_A: 0.006 G_A: 0.651 idt_A: 0.510 G_ATTACK: -29.884 distance: 0.000 
+End of epoch 121 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001564
+End of epoch 122 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001545
+(epoch: 123, iters: 22, time: 1.049, data: 0.001) D_A: 0.007 G_A: 1.031 idt_A: 0.559 G_ATTACK: -29.963 distance: 0.000 
+End of epoch 123 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001525
+End of epoch 124 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001505
+(epoch: 125, iters: 24, time: 0.724, data: 0.001) D_A: 0.016 G_A: 0.772 idt_A: 0.454 G_ATTACK: -29.979 distance: 0.000 
+End of epoch 125 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001485
+End of epoch 126 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001465
+(epoch: 127, iters: 26, time: 0.725, data: 0.001) D_A: 0.024 G_A: 1.035 idt_A: 0.434 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 127 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001446
+End of epoch 128 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001426
+(epoch: 129, iters: 28, time: 0.724, data: 0.001) D_A: 0.033 G_A: 1.274 idt_A: 0.965 G_ATTACK: -29.930 distance: 0.000 
+End of epoch 129 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001406
+End of epoch 130 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001386
+(epoch: 131, iters: 30, time: 1.075, data: 0.001) D_A: 0.011 G_A: 0.938 idt_A: 0.676 G_ATTACK: -29.974 distance: 0.000 
+End of epoch 131 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001366
+End of epoch 132 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001347
+(epoch: 133, iters: 32, time: 0.730, data: 0.001) D_A: 0.006 G_A: 0.901 idt_A: 0.590 G_ATTACK: -29.997 distance: 0.000 
+End of epoch 133 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001327
+End of epoch 134 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001307
+(epoch: 135, iters: 34, time: 0.728, data: 0.001) D_A: 0.003 G_A: 1.078 idt_A: 0.603 G_ATTACK: -29.999 distance: 0.000 
+End of epoch 135 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001287
+End of epoch 136 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001267
+(epoch: 137, iters: 36, time: 0.728, data: 0.001) D_A: 0.041 G_A: 1.002 idt_A: 0.989 G_ATTACK: -29.999 distance: 0.000 
+End of epoch 137 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001248
+End of epoch 138 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001228
+(epoch: 139, iters: 38, time: 1.086, data: 0.001) D_A: 0.007 G_A: 0.934 idt_A: 0.542 G_ATTACK: -29.998 distance: 0.000 
+End of epoch 139 / 200 	 Time Taken: 36 sec
+learning rate = 0.0001208
+End of epoch 140 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001188
+(epoch: 141, iters: 40, time: 0.724, data: 0.001) D_A: 0.004 G_A: 0.958 idt_A: 0.502 G_ATTACK: -29.993 distance: 0.000 
+End of epoch 141 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001168
+End of epoch 142 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001149
+(epoch: 143, iters: 42, time: 0.728, data: 0.001) D_A: 0.013 G_A: 0.931 idt_A: 0.611 G_ATTACK: -29.997 distance: 0.000 
+End of epoch 143 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001129
+End of epoch 144 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001109
+(epoch: 145, iters: 44, time: 0.730, data: 0.001) D_A: 0.084 G_A: 0.563 idt_A: 0.403 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 145 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001089
+End of epoch 146 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001069
+(epoch: 147, iters: 46, time: 1.133, data: 0.001) D_A: 0.029 G_A: 0.647 idt_A: 0.393 G_ATTACK: -29.953 distance: 0.000 
+End of epoch 147 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001050
+End of epoch 148 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001030
+(epoch: 149, iters: 48, time: 0.721, data: 0.001) D_A: 0.017 G_A: 0.803 idt_A: 0.389 G_ATTACK: -29.921 distance: 0.000 
+End of epoch 149 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001010
+End of epoch 150 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000990
+End of epoch 151 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000970
+(epoch: 152, iters: 1, time: 0.728, data: 0.001) D_A: 0.132 G_A: 0.475 idt_A: 0.369 G_ATTACK: -29.878 distance: 0.000 
+End of epoch 152 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000950
+End of epoch 153 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000931
+(epoch: 154, iters: 3, time: 0.726, data: 0.000) D_A: 0.051 G_A: 0.335 idt_A: 0.386 G_ATTACK: -29.977 distance: 0.000 
+End of epoch 154 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000911
+End of epoch 155 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000891
+(epoch: 156, iters: 5, time: 1.116, data: 0.000) D_A: 0.026 G_A: 0.731 idt_A: 0.370 G_ATTACK: -29.986 distance: 0.000 
+End of epoch 156 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000871
+End of epoch 157 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000851
+(epoch: 158, iters: 7, time: 0.729, data: 0.000) D_A: 0.029 G_A: 0.581 idt_A: 0.366 G_ATTACK: -29.971 distance: 0.000 
+End of epoch 158 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000832
+End of epoch 159 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000812
+(epoch: 160, iters: 9, time: 0.728, data: 0.000) D_A: 0.029 G_A: 0.532 idt_A: 0.347 G_ATTACK: -29.990 distance: 0.000 
+End of epoch 160 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000792
+End of epoch 161 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000772
+(epoch: 162, iters: 11, time: 0.729, data: 0.001) D_A: 0.027 G_A: 0.799 idt_A: 0.360 G_ATTACK: -29.971 distance: 0.000 
+End of epoch 162 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000752
+End of epoch 163 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000733
+(epoch: 164, iters: 13, time: 1.127, data: 0.001) D_A: 0.051 G_A: 0.714 idt_A: 0.350 G_ATTACK: -29.947 distance: 0.000 
+End of epoch 164 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000713
+End of epoch 165 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000693
+(epoch: 166, iters: 15, time: 0.726, data: 0.001) D_A: 0.080 G_A: 0.470 idt_A: 0.349 G_ATTACK: -29.960 distance: 0.000 
+End of epoch 166 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000673
+End of epoch 167 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000653
+(epoch: 168, iters: 17, time: 0.727, data: 0.001) D_A: 0.070 G_A: 0.484 idt_A: 0.339 G_ATTACK: -29.629 distance: 0.000 
+End of epoch 168 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000634
+End of epoch 169 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000614
+(epoch: 170, iters: 19, time: 0.730, data: 0.001) D_A: 0.058 G_A: 0.537 idt_A: 0.344 G_ATTACK: -29.920 distance: 0.000 
+End of epoch 170 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000594
+End of epoch 171 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000574
+(epoch: 172, iters: 21, time: 1.150, data: 0.001) D_A: 0.053 G_A: 0.653 idt_A: 0.342 G_ATTACK: -29.986 distance: 0.000 
+End of epoch 172 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000554
+End of epoch 173 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000535
+(epoch: 174, iters: 23, time: 0.729, data: 0.001) D_A: 0.033 G_A: 0.556 idt_A: 0.336 G_ATTACK: -29.901 distance: 0.000 
+End of epoch 174 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000515
+End of epoch 175 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000495
+(epoch: 176, iters: 25, time: 0.727, data: 0.001) D_A: 0.022 G_A: 0.414 idt_A: 0.349 G_ATTACK: -29.991 distance: 0.000 
+End of epoch 176 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000475
+End of epoch 177 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000455
+(epoch: 178, iters: 27, time: 0.726, data: 0.001) D_A: 0.060 G_A: 0.922 idt_A: 0.326 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 178 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000436
+End of epoch 179 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000416
+(epoch: 180, iters: 29, time: 1.193, data: 0.001) D_A: 0.030 G_A: 0.687 idt_A: 0.336 G_ATTACK: -29.973 distance: 0.000 
+End of epoch 180 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000396
+End of epoch 181 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000376
+(epoch: 182, iters: 31, time: 0.725, data: 0.001) D_A: 0.040 G_A: 0.407 idt_A: 0.326 G_ATTACK: -29.895 distance: 0.000 
+End of epoch 182 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000356
+End of epoch 183 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000337
+(epoch: 184, iters: 33, time: 0.730, data: 0.001) D_A: 0.030 G_A: 0.754 idt_A: 0.329 G_ATTACK: -29.961 distance: 0.000 
+End of epoch 184 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000317
+End of epoch 185 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000297
+(epoch: 186, iters: 35, time: 0.731, data: 0.001) D_A: 0.028 G_A: 0.654 idt_A: 0.327 G_ATTACK: -29.941 distance: 0.000 
+End of epoch 186 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000277
+End of epoch 187 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000257
+(epoch: 188, iters: 37, time: 1.183, data: 0.001) D_A: 0.059 G_A: 0.549 idt_A: 0.328 G_ATTACK: -29.896 distance: 0.000 
+End of epoch 188 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000238
+End of epoch 189 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000218
+(epoch: 190, iters: 39, time: 0.728, data: 0.001) D_A: 0.030 G_A: 0.858 idt_A: 0.329 G_ATTACK: -29.902 distance: 0.000 
+End of epoch 190 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000198
+End of epoch 191 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000178
+(epoch: 192, iters: 41, time: 0.724, data: 0.001) D_A: 0.034 G_A: 0.639 idt_A: 0.334 G_ATTACK: -29.980 distance: 0.000 
+End of epoch 192 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000158
+End of epoch 193 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000139
+(epoch: 194, iters: 43, time: 0.728, data: 0.001) D_A: 0.075 G_A: 0.787 idt_A: 0.324 G_ATTACK: -29.783 distance: 0.000 
+End of epoch 194 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000119
+End of epoch 195 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000099
+(epoch: 196, iters: 45, time: 1.191, data: 0.001) D_A: 0.046 G_A: 0.621 idt_A: 0.324 G_ATTACK: -29.788 distance: 0.000 
+End of epoch 196 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000079
+End of epoch 197 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000059
+(epoch: 198, iters: 47, time: 0.732, data: 0.001) D_A: 0.060 G_A: 0.591 idt_A: 0.322 G_ATTACK: -29.974 distance: 0.000 
+End of epoch 198 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000040
+End of epoch 199 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000020
+(epoch: 200, iters: 49, time: 0.727, data: 0.001) D_A: 0.021 G_A: 0.658 idt_A: 0.323 G_ATTACK: -29.943 distance: 0.000 
+saving the model at the end of epoch 200, iters 9800
+End of epoch 200 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000000
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+dataset [UnalignedDataset] was created
+The number of training images = 49
+initialize network with normal
+initialize network with normal
+initialize network with normal
+model [AttackEtTarGANModel] was created
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 7.838 M
+[Network D_A] Total number of parameters : 2.765 M
+-----------------------------------------------
+create web directory ./checkpoints/eot1_ones_v6_215t800_b30_2/web...
+End of epoch 1 / 200 	 Time Taken: 40 sec
+learning rate = 0.0002000
+End of epoch 2 / 200 	 Time Taken: 34 sec
+learning rate = 0.0002000
+(epoch: 3, iters: 2, time: 0.696, data: 0.085) D_A: 0.280 G_A: 0.304 idt_A: 0.884 G_ATTACK: 0.002 distance: 0.000 
+End of epoch 3 / 200 	 Time Taken: 34 sec
+learning rate = 0.0002000
+End of epoch 4 / 200 	 Time Taken: 34 sec
+learning rate = 0.0002000
+(epoch: 5, iters: 4, time: 0.702, data: 0.000) D_A: 0.089 G_A: 0.486 idt_A: 1.190 G_ATTACK: -29.903 distance: 0.000 
+End of epoch 5 / 200 	 Time Taken: 34 sec
+learning rate = 0.0002000
+End of epoch 6 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 7, iters: 6, time: 0.722, data: 0.000) D_A: 0.147 G_A: 0.384 idt_A: 1.015 G_ATTACK: -29.987 distance: 0.000 
+End of epoch 7 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 8 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 9, iters: 8, time: 0.842, data: 0.002) D_A: 0.119 G_A: 0.510 idt_A: 1.011 G_ATTACK: -29.976 distance: 0.000 
+End of epoch 9 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 10 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 11, iters: 10, time: 0.722, data: 0.001) D_A: 0.125 G_A: 1.103 idt_A: 0.923 G_ATTACK: -29.938 distance: 0.000 
+End of epoch 11 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 12 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 13, iters: 12, time: 0.721, data: 0.001) D_A: 0.065 G_A: 0.191 idt_A: 0.637 G_ATTACK: -29.952 distance: 0.000 
+End of epoch 13 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 14 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 15, iters: 14, time: 0.725, data: 0.001) D_A: 0.060 G_A: 0.351 idt_A: 0.658 G_ATTACK: -29.916 distance: 0.000 
+End of epoch 15 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 16 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 17, iters: 16, time: 0.853, data: 0.001) D_A: 0.106 G_A: 0.360 idt_A: 0.627 G_ATTACK: -29.998 distance: 0.000 
+End of epoch 17 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 18 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 19, iters: 18, time: 0.722, data: 0.001) D_A: 0.142 G_A: 0.276 idt_A: 0.542 G_ATTACK: -29.944 distance: 0.000 
+End of epoch 19 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 20 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 21, iters: 20, time: 0.725, data: 0.001) D_A: 0.149 G_A: 0.330 idt_A: 0.559 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 21 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 22 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 23, iters: 22, time: 0.725, data: 0.001) D_A: 0.194 G_A: 0.542 idt_A: 0.714 G_ATTACK: -29.937 distance: 0.000 
+End of epoch 23 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 24 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 25, iters: 24, time: 0.869, data: 0.001) D_A: 0.230 G_A: 0.557 idt_A: 0.592 G_ATTACK: -29.931 distance: 0.000 
+End of epoch 25 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 26 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 27, iters: 26, time: 0.724, data: 0.001) D_A: 0.239 G_A: 0.363 idt_A: 0.503 G_ATTACK: -29.451 distance: 0.000 
+End of epoch 27 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 28 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 29, iters: 28, time: 0.723, data: 0.001) D_A: 0.064 G_A: 0.677 idt_A: 0.621 G_ATTACK: -29.958 distance: 0.000 
+End of epoch 29 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 30 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 31, iters: 30, time: 0.727, data: 0.001) D_A: 0.244 G_A: 0.158 idt_A: 0.454 G_ATTACK: -29.965 distance: 0.000 
+End of epoch 31 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 32 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 33, iters: 32, time: 0.886, data: 0.001) D_A: 0.102 G_A: 0.315 idt_A: 0.451 G_ATTACK: -29.947 distance: 0.000 
+End of epoch 33 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 34 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 35, iters: 34, time: 0.725, data: 0.001) D_A: 0.221 G_A: 0.179 idt_A: 0.460 G_ATTACK: -29.670 distance: 0.000 
+End of epoch 35 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 36 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 37, iters: 36, time: 0.727, data: 0.001) D_A: 0.020 G_A: 1.056 idt_A: 1.238 G_ATTACK: -29.833 distance: 0.000 
+End of epoch 37 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 38 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 39, iters: 38, time: 0.730, data: 0.001) D_A: 0.026 G_A: 1.119 idt_A: 0.938 G_ATTACK: -29.577 distance: 0.000 
+End of epoch 39 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 40 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 41, iters: 40, time: 0.901, data: 0.001) D_A: 0.007 G_A: 0.936 idt_A: 0.876 G_ATTACK: -29.936 distance: 0.000 
+End of epoch 41 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 42 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 43, iters: 42, time: 0.723, data: 0.001) D_A: 0.006 G_A: 0.837 idt_A: 0.752 G_ATTACK: -29.983 distance: 0.000 
+End of epoch 43 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 44 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 45, iters: 44, time: 0.730, data: 0.001) D_A: 0.008 G_A: 1.028 idt_A: 0.892 G_ATTACK: -29.997 distance: 0.000 
+End of epoch 45 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 46 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 47, iters: 46, time: 0.725, data: 0.001) D_A: 0.033 G_A: 0.988 idt_A: 0.875 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 47 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 48 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 49, iters: 48, time: 0.912, data: 0.001) D_A: 0.046 G_A: 0.823 idt_A: 0.645 G_ATTACK: -29.724 distance: 0.000 
+End of epoch 49 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 50 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 51 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 52, iters: 1, time: 0.728, data: 0.001) D_A: 0.055 G_A: 0.951 idt_A: 0.611 G_ATTACK: -29.906 distance: 0.000 
+End of epoch 52 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 53 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 54, iters: 3, time: 0.733, data: 0.004) D_A: 0.057 G_A: 0.645 idt_A: 0.620 G_ATTACK: -29.803 distance: 0.000 
+End of epoch 54 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 55 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 56, iters: 5, time: 0.727, data: 0.000) D_A: 0.017 G_A: 0.912 idt_A: 0.699 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 56 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 57 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 58, iters: 7, time: 0.929, data: 0.000) D_A: 0.065 G_A: 0.587 idt_A: 0.615 G_ATTACK: -29.982 distance: 0.000 
+End of epoch 58 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 59 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 60, iters: 9, time: 0.725, data: 0.000) D_A: 0.021 G_A: 1.124 idt_A: 0.705 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 60 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 61 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 62, iters: 11, time: 0.725, data: 0.001) D_A: 0.027 G_A: 0.874 idt_A: 0.608 G_ATTACK: -29.906 distance: 0.000 
+End of epoch 62 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 63 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 64, iters: 13, time: 0.724, data: 0.001) D_A: 4.358 G_A: 4.399 idt_A: 0.544 G_ATTACK: -29.991 distance: 0.000 
+End of epoch 64 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 65 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 66, iters: 15, time: 0.944, data: 0.001) D_A: 0.016 G_A: 0.860 idt_A: 0.901 G_ATTACK: -29.892 distance: 0.000 
+End of epoch 66 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 67 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 68, iters: 17, time: 0.723, data: 0.001) D_A: 0.027 G_A: 0.791 idt_A: 0.730 G_ATTACK: -29.967 distance: 0.000 
+End of epoch 68 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 69 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 70, iters: 19, time: 0.728, data: 0.001) D_A: 0.061 G_A: 0.693 idt_A: 0.658 G_ATTACK: -29.899 distance: 0.000 
+End of epoch 70 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 71 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 72, iters: 21, time: 0.724, data: 0.001) D_A: 0.045 G_A: 0.384 idt_A: 0.586 G_ATTACK: -29.812 distance: 0.000 
+End of epoch 72 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 73 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 74, iters: 23, time: 0.956, data: 0.001) D_A: 0.091 G_A: 0.399 idt_A: 0.457 G_ATTACK: -29.970 distance: 0.000 
+End of epoch 74 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 75 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 76, iters: 25, time: 0.724, data: 0.001) D_A: 0.051 G_A: 0.726 idt_A: 0.483 G_ATTACK: -29.968 distance: 0.000 
+End of epoch 76 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 77 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 78, iters: 27, time: 0.725, data: 0.001) D_A: 0.029 G_A: 0.872 idt_A: 0.465 G_ATTACK: -29.934 distance: 0.000 
+End of epoch 78 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 79 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 80, iters: 29, time: 0.725, data: 0.001) D_A: 0.123 G_A: 0.859 idt_A: 0.447 G_ATTACK: -29.518 distance: 0.000 
+End of epoch 80 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 81 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 82, iters: 31, time: 0.972, data: 0.001) D_A: 0.190 G_A: 0.417 idt_A: 0.482 G_ATTACK: -29.800 distance: 0.000 
+End of epoch 82 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 83 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 84, iters: 33, time: 0.722, data: 0.001) D_A: 0.010 G_A: 1.020 idt_A: 1.027 G_ATTACK: -29.968 distance: 0.000 
+End of epoch 84 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 85 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 86, iters: 35, time: 0.726, data: 0.001) D_A: 0.011 G_A: 0.880 idt_A: 0.704 G_ATTACK: -29.900 distance: 0.000 
+End of epoch 86 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 87 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 88, iters: 37, time: 0.724, data: 0.001) D_A: 0.010 G_A: 1.091 idt_A: 0.815 G_ATTACK: -29.905 distance: 0.000 
+End of epoch 88 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 89 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 90, iters: 39, time: 1.017, data: 0.001) D_A: 0.010 G_A: 1.003 idt_A: 0.827 G_ATTACK: -29.991 distance: 0.000 
+End of epoch 90 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 91 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 92, iters: 41, time: 0.723, data: 0.001) D_A: 0.059 G_A: 0.855 idt_A: 0.444 G_ATTACK: -29.980 distance: 0.000 
+End of epoch 92 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 93 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 94, iters: 43, time: 0.723, data: 0.001) D_A: 0.007 G_A: 0.863 idt_A: 0.543 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 94 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 95 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 96, iters: 45, time: 0.722, data: 0.001) D_A: 0.009 G_A: 0.985 idt_A: 0.544 G_ATTACK: -29.982 distance: 0.000 
+End of epoch 96 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+----------------- Options ---------------
+               batch_size: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                crop_size: 256                           
+                 dataroot: ../trainImages/aligned_imgs/215_ones_05/	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+              display_env: main                          
+             display_freq: 400                           
+               display_id: 1                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+                    epoch: latest                        
+              epoch_count: 1                             
+                 gan_mode: lsgan                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
+                 lambda_B: 10.0                          
+                lambda_MI: 0.0                           
+          lambda_distance: 0.0                           
+          lambda_identity: 0.5                           
+            lambda_percep: 0.0                           
+                load_iter: 0                             	[default: 0]
+                load_size: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: attack_et_tar_gan             	[default: cycle_gan]
+               n_layers_D: 3                             
+                     name: eot1_ones_v6_215t800_b30_2    	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_6blocks                	[default: resnet_9blocks]
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                     norm: instance                      
+              num_threads: 4                             
+                      ori: 215                           	[default: 0]
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               preprocess: resize_and_crop               
+               print_freq: 100                           
+             save_by_iter: False                         
+          save_epoch_freq: 100                           	[default: 5]
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+                   target: 800                           	[default: None]
+         update_html_freq: 1000                          
+                  verbose: False                         
+----------------- End -------------------
+dataset [UnalignedDataset] was created
+The number of training images = 49
+initialize network with normal
+initialize network with normal
+initialize network with normal
+model [AttackEtTarGANModel] was created
+---------- Networks initialized -------------
+[Network G_A] Total number of parameters : 7.838 M
+[Network D_A] Total number of parameters : 2.765 M
+-----------------------------------------------
+create web directory ./checkpoints/eot1_ones_v6_215t800_b30_2/web...
+End of epoch 1 / 200 	 Time Taken: 40 sec
+learning rate = 0.0002000
+End of epoch 2 / 200 	 Time Taken: 34 sec
+learning rate = 0.0002000
+(epoch: 3, iters: 2, time: 0.717, data: 0.081) D_A: 0.447 G_A: 0.513 idt_A: 1.536 G_ATTACK: -29.744 distance: 0.000 
+End of epoch 3 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 4 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 5, iters: 4, time: 0.725, data: 0.002) D_A: 0.103 G_A: 0.512 idt_A: 1.056 G_ATTACK: -29.976 distance: 0.000 
+End of epoch 5 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 6 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 7, iters: 6, time: 0.726, data: 0.002) D_A: 0.051 G_A: 0.665 idt_A: 1.001 G_ATTACK: -29.987 distance: 0.000 
+End of epoch 7 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 8 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 9, iters: 8, time: 0.844, data: 0.000) D_A: 0.146 G_A: 0.455 idt_A: 0.824 G_ATTACK: -29.978 distance: 0.000 
+End of epoch 9 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 10 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 11, iters: 10, time: 0.725, data: 0.001) D_A: 0.109 G_A: 0.490 idt_A: 0.883 G_ATTACK: -29.971 distance: 0.000 
+End of epoch 11 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 12 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 13, iters: 12, time: 0.726, data: 0.001) D_A: 0.071 G_A: 0.165 idt_A: 0.699 G_ATTACK: -29.787 distance: 0.000 
+End of epoch 13 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 14 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 15, iters: 14, time: 0.727, data: 0.001) D_A: 0.117 G_A: 0.501 idt_A: 0.999 G_ATTACK: 0.006 distance: 0.000 
+End of epoch 15 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 16 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 17, iters: 16, time: 0.853, data: 0.001) D_A: 0.070 G_A: 0.722 idt_A: 2.019 G_ATTACK: 0.001 distance: 0.000 
+End of epoch 17 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 18 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 19, iters: 18, time: 0.723, data: 0.001) D_A: 0.219 G_A: 0.904 idt_A: 2.084 G_ATTACK: -28.598 distance: 0.000 
+End of epoch 19 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 20 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 21, iters: 20, time: 0.722, data: 0.001) D_A: 0.151 G_A: 0.748 idt_A: 0.945 G_ATTACK: -29.719 distance: 0.000 
+End of epoch 21 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 22 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 23, iters: 22, time: 0.726, data: 0.001) D_A: 0.051 G_A: 0.731 idt_A: 0.828 G_ATTACK: -29.934 distance: 0.000 
+End of epoch 23 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 24 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 25, iters: 24, time: 0.867, data: 0.001) D_A: 0.303 G_A: 0.134 idt_A: 0.778 G_ATTACK: -29.971 distance: 0.000 
+End of epoch 25 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 26 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 27, iters: 26, time: 0.724, data: 0.001) D_A: 0.150 G_A: 0.638 idt_A: 0.670 G_ATTACK: -29.932 distance: 0.000 
+End of epoch 27 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 28 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 29, iters: 28, time: 0.725, data: 0.001) D_A: 0.130 G_A: 0.496 idt_A: 0.723 G_ATTACK: -29.996 distance: 0.000 
+End of epoch 29 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 30 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 31, iters: 30, time: 0.724, data: 0.001) D_A: 0.040 G_A: 0.871 idt_A: 1.144 G_ATTACK: -29.996 distance: 0.000 
+End of epoch 31 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 32 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 33, iters: 32, time: 0.882, data: 0.001) D_A: 0.145 G_A: 0.326 idt_A: 0.587 G_ATTACK: -29.762 distance: 0.000 
+End of epoch 33 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 34 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 35, iters: 34, time: 0.730, data: 0.001) D_A: 0.181 G_A: 0.367 idt_A: 0.590 G_ATTACK: -29.978 distance: 0.000 
+End of epoch 35 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 36 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 37, iters: 36, time: 0.724, data: 0.001) D_A: 0.148 G_A: 0.264 idt_A: 0.776 G_ATTACK: -29.967 distance: 0.000 
+End of epoch 37 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 38 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 39, iters: 38, time: 0.726, data: 0.001) D_A: 0.085 G_A: 0.788 idt_A: 0.649 G_ATTACK: -29.861 distance: 0.000 
+End of epoch 39 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 40 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 41, iters: 40, time: 0.893, data: 0.001) D_A: 0.039 G_A: 0.665 idt_A: 0.837 G_ATTACK: -29.906 distance: 0.000 
+End of epoch 41 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 42 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 43, iters: 42, time: 0.725, data: 0.001) D_A: 0.097 G_A: 0.140 idt_A: 0.537 G_ATTACK: -29.906 distance: 0.000 
+End of epoch 43 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 44 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 45, iters: 44, time: 0.722, data: 0.001) D_A: 0.083 G_A: 0.357 idt_A: 0.543 G_ATTACK: -29.998 distance: 0.000 
+End of epoch 45 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 46 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 47, iters: 46, time: 0.726, data: 0.001) D_A: 0.100 G_A: 0.327 idt_A: 0.473 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 47 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 48 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 49, iters: 48, time: 0.916, data: 0.001) D_A: 0.050 G_A: 0.944 idt_A: 0.576 G_ATTACK: -29.994 distance: 0.000 
+End of epoch 49 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 50 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 51 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 52, iters: 1, time: 0.725, data: 0.001) D_A: 0.106 G_A: 0.415 idt_A: 0.451 G_ATTACK: -29.981 distance: 0.000 
+End of epoch 52 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 53 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 54, iters: 3, time: 0.728, data: 0.002) D_A: 0.074 G_A: 0.502 idt_A: 1.123 G_ATTACK: -29.964 distance: 0.000 
+End of epoch 54 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 55 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 56, iters: 5, time: 0.731, data: 0.000) D_A: 0.016 G_A: 0.674 idt_A: 0.880 G_ATTACK: -29.955 distance: 0.000 
+End of epoch 56 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 57 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 58, iters: 7, time: 0.936, data: 0.003) D_A: 0.035 G_A: 0.618 idt_A: 0.754 G_ATTACK: -29.936 distance: 0.000 
+End of epoch 58 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 59 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 60, iters: 9, time: 0.729, data: 0.000) D_A: 0.014 G_A: 0.802 idt_A: 0.706 G_ATTACK: -29.846 distance: 0.000 
+End of epoch 60 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 61 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 62, iters: 11, time: 0.726, data: 0.001) D_A: 0.049 G_A: 0.936 idt_A: 0.612 G_ATTACK: -29.997 distance: 0.000 
+End of epoch 62 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 63 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 64, iters: 13, time: 0.723, data: 0.001) D_A: 0.063 G_A: 0.613 idt_A: 0.534 G_ATTACK: -29.984 distance: 0.000 
+End of epoch 64 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 65 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 66, iters: 15, time: 0.946, data: 0.001) D_A: 0.071 G_A: 0.527 idt_A: 0.741 G_ATTACK: -29.970 distance: 0.000 
+End of epoch 66 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 67 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 68, iters: 17, time: 0.724, data: 0.001) D_A: 0.148 G_A: 0.281 idt_A: 0.450 G_ATTACK: -29.998 distance: 0.000 
+End of epoch 68 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 69 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 70, iters: 19, time: 0.725, data: 0.001) D_A: 0.092 G_A: 0.619 idt_A: 0.447 G_ATTACK: -29.741 distance: 0.000 
+End of epoch 70 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 71 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 72, iters: 21, time: 0.725, data: 0.001) D_A: 0.037 G_A: 0.968 idt_A: 0.763 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 72 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 73 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 74, iters: 23, time: 0.961, data: 0.001) D_A: 0.017 G_A: 1.155 idt_A: 0.996 G_ATTACK: -29.987 distance: 0.000 
+End of epoch 74 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 75 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 76, iters: 25, time: 0.730, data: 0.001) D_A: 0.007 G_A: 0.915 idt_A: 0.662 G_ATTACK: -29.993 distance: 0.000 
+End of epoch 76 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 77 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 78, iters: 27, time: 0.726, data: 0.001) D_A: 0.013 G_A: 0.908 idt_A: 0.870 G_ATTACK: -29.935 distance: 0.000 
+End of epoch 78 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 79 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 80, iters: 29, time: 0.726, data: 0.001) D_A: 0.025 G_A: 0.930 idt_A: 0.664 G_ATTACK: -29.992 distance: 0.000 
+End of epoch 80 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 81 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 82, iters: 31, time: 0.977, data: 0.001) D_A: 0.010 G_A: 1.074 idt_A: 0.808 G_ATTACK: -29.996 distance: 0.000 
+End of epoch 82 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 83 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 84, iters: 33, time: 0.731, data: 0.001) D_A: 0.084 G_A: 0.955 idt_A: 0.605 G_ATTACK: -29.992 distance: 0.000 
+End of epoch 84 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 85 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 86, iters: 35, time: 0.728, data: 0.001) D_A: 0.049 G_A: 0.615 idt_A: 0.538 G_ATTACK: -29.993 distance: 0.000 
+End of epoch 86 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 87 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 88, iters: 37, time: 0.726, data: 0.001) D_A: 0.072 G_A: 0.839 idt_A: 0.482 G_ATTACK: -29.965 distance: 0.000 
+End of epoch 88 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 89 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 90, iters: 39, time: 1.018, data: 0.001) D_A: 0.037 G_A: 0.721 idt_A: 0.459 G_ATTACK: -29.986 distance: 0.000 
+End of epoch 90 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 91 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 92, iters: 41, time: 0.728, data: 0.001) D_A: 0.044 G_A: 0.669 idt_A: 0.426 G_ATTACK: -29.990 distance: 0.000 
+End of epoch 92 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 93 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 94, iters: 43, time: 0.727, data: 0.001) D_A: 0.174 G_A: 0.264 idt_A: 0.438 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 94 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 95 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 96, iters: 45, time: 0.725, data: 0.001) D_A: 0.106 G_A: 1.170 idt_A: 0.935 G_ATTACK: -29.981 distance: 0.000 
+End of epoch 96 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 97 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 98, iters: 47, time: 1.009, data: 0.001) D_A: 0.114 G_A: 0.343 idt_A: 0.407 G_ATTACK: -29.901 distance: 0.000 
+End of epoch 98 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+End of epoch 99 / 200 	 Time Taken: 35 sec
+learning rate = 0.0002000
+(epoch: 100, iters: 49, time: 0.730, data: 0.001) D_A: 0.105 G_A: 0.706 idt_A: 0.405 G_ATTACK: -29.956 distance: 0.000 
+saving the model at the end of epoch 100, iters 4900
+End of epoch 100 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001980
+End of epoch 101 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001960
+End of epoch 102 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001941
+(epoch: 103, iters: 2, time: 0.727, data: 0.106) D_A: 0.084 G_A: 0.766 idt_A: 0.384 G_ATTACK: -29.968 distance: 0.000 
+saving the latest model (epoch 103, total_iters 5000)
+End of epoch 103 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001921
+End of epoch 104 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001901
+(epoch: 105, iters: 4, time: 0.724, data: 0.000) D_A: 0.093 G_A: 0.683 idt_A: 0.450 G_ATTACK: -29.985 distance: 0.000 
+End of epoch 105 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001881
+End of epoch 106 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001861
+(epoch: 107, iters: 6, time: 1.025, data: 0.002) D_A: 0.043 G_A: 0.517 idt_A: 0.385 G_ATTACK: -29.820 distance: 0.000 
+End of epoch 107 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001842
+End of epoch 108 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001822
+(epoch: 109, iters: 8, time: 0.726, data: 0.001) D_A: 0.090 G_A: 0.609 idt_A: 0.372 G_ATTACK: -29.986 distance: 0.000 
+End of epoch 109 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001802
+End of epoch 110 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001782
+(epoch: 111, iters: 10, time: 0.729, data: 0.001) D_A: 0.090 G_A: 1.578 idt_A: 0.415 G_ATTACK: -29.956 distance: 0.000 
+End of epoch 111 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001762
+End of epoch 112 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001743
+(epoch: 113, iters: 12, time: 0.729, data: 0.001) D_A: 0.074 G_A: 0.640 idt_A: 0.366 G_ATTACK: -29.986 distance: 0.000 
+End of epoch 113 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001723
+End of epoch 114 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001703
+(epoch: 115, iters: 14, time: 1.040, data: 0.001) D_A: 0.029 G_A: 0.849 idt_A: 0.387 G_ATTACK: -29.836 distance: 0.000 
+End of epoch 115 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001683
+End of epoch 116 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001663
+(epoch: 117, iters: 16, time: 0.725, data: 0.001) D_A: 0.050 G_A: 0.674 idt_A: 0.381 G_ATTACK: -29.962 distance: 0.000 
+End of epoch 117 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001644
+End of epoch 118 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001624
+(epoch: 119, iters: 18, time: 0.725, data: 0.001) D_A: 0.041 G_A: 0.832 idt_A: 0.396 G_ATTACK: -29.979 distance: 0.000 
+End of epoch 119 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001604
+End of epoch 120 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001584
+(epoch: 121, iters: 20, time: 0.724, data: 0.001) D_A: 0.064 G_A: 0.558 idt_A: 0.355 G_ATTACK: -29.946 distance: 0.000 
+End of epoch 121 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001564
+End of epoch 122 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001545
+(epoch: 123, iters: 22, time: 1.057, data: 0.001) D_A: 0.035 G_A: 0.437 idt_A: 0.341 G_ATTACK: -29.944 distance: 0.000 
+End of epoch 123 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001525
+End of epoch 124 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001505
+(epoch: 125, iters: 24, time: 0.722, data: 0.001) D_A: 0.097 G_A: 0.499 idt_A: 0.339 G_ATTACK: -29.988 distance: 0.000 
+End of epoch 125 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001485
+End of epoch 126 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001465
+(epoch: 127, iters: 26, time: 0.729, data: 0.001) D_A: 0.169 G_A: 0.752 idt_A: 0.339 G_ATTACK: -29.965 distance: 0.000 
+End of epoch 127 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001446
+End of epoch 128 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001426
+(epoch: 129, iters: 28, time: 0.725, data: 0.001) D_A: 0.027 G_A: 0.769 idt_A: 0.361 G_ATTACK: -29.962 distance: 0.000 
+End of epoch 129 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001406
+End of epoch 130 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001386
+(epoch: 131, iters: 30, time: 1.075, data: 0.001) D_A: 0.057 G_A: 0.969 idt_A: 0.346 G_ATTACK: -29.790 distance: 0.000 
+End of epoch 131 / 200 	 Time Taken: 36 sec
+learning rate = 0.0001366
+End of epoch 132 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001347
+(epoch: 133, iters: 32, time: 0.727, data: 0.001) D_A: 0.026 G_A: 0.589 idt_A: 0.350 G_ATTACK: -29.989 distance: 0.000 
+End of epoch 133 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001327
+End of epoch 134 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001307
+(epoch: 135, iters: 34, time: 0.727, data: 0.001) D_A: 0.037 G_A: 0.437 idt_A: 0.328 G_ATTACK: -29.968 distance: 0.000 
+End of epoch 135 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001287
+End of epoch 136 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001267
+(epoch: 137, iters: 36, time: 0.727, data: 0.001) D_A: 0.054 G_A: 0.796 idt_A: 0.327 G_ATTACK: -29.877 distance: 0.000 
+End of epoch 137 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001248
+End of epoch 138 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001228
+(epoch: 139, iters: 38, time: 1.083, data: 0.001) D_A: 0.039 G_A: 0.832 idt_A: 0.332 G_ATTACK: -29.890 distance: 0.000 
+End of epoch 139 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001208
+End of epoch 140 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001188
+(epoch: 141, iters: 40, time: 0.725, data: 0.001) D_A: 0.051 G_A: 0.905 idt_A: 0.332 G_ATTACK: -29.972 distance: 0.000 
+End of epoch 141 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001168
+End of epoch 142 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001149
+(epoch: 143, iters: 42, time: 0.724, data: 0.001) D_A: 0.055 G_A: 0.830 idt_A: 0.326 G_ATTACK: -29.970 distance: 0.000 
+End of epoch 143 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001129
+End of epoch 144 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001109
+(epoch: 145, iters: 44, time: 0.723, data: 0.001) D_A: 0.124 G_A: 0.322 idt_A: 0.324 G_ATTACK: -29.962 distance: 0.000 
+End of epoch 145 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001089
+End of epoch 146 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001069
+(epoch: 147, iters: 46, time: 1.134, data: 0.001) D_A: 0.033 G_A: 0.812 idt_A: 0.326 G_ATTACK: -29.993 distance: 0.000 
+End of epoch 147 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001050
+End of epoch 148 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001030
+(epoch: 149, iters: 48, time: 0.727, data: 0.001) D_A: 0.038 G_A: 0.963 idt_A: 0.333 G_ATTACK: -29.994 distance: 0.000 
+End of epoch 149 / 200 	 Time Taken: 35 sec
+learning rate = 0.0001010
+End of epoch 150 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000990
+End of epoch 151 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000970
+(epoch: 152, iters: 1, time: 0.729, data: 0.001) D_A: 0.070 G_A: 0.469 idt_A: 0.314 G_ATTACK: -29.650 distance: 0.000 
+End of epoch 152 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000950
+End of epoch 153 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000931
+(epoch: 154, iters: 3, time: 0.727, data: 0.000) D_A: 0.109 G_A: 0.677 idt_A: 0.311 G_ATTACK: -29.952 distance: 0.000 
+End of epoch 154 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000911
+End of epoch 155 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000891
+(epoch: 156, iters: 5, time: 1.122, data: 0.000) D_A: 0.036 G_A: 0.914 idt_A: 0.316 G_ATTACK: -29.932 distance: 0.000 
+End of epoch 156 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000871
+End of epoch 157 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000851
+(epoch: 158, iters: 7, time: 0.728, data: 0.001) D_A: 0.020 G_A: 1.078 idt_A: 0.331 G_ATTACK: -29.969 distance: 0.000 
+End of epoch 158 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000832
+End of epoch 159 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000812
+(epoch: 160, iters: 9, time: 0.727, data: 0.000) D_A: 0.048 G_A: 0.730 idt_A: 0.309 G_ATTACK: -29.996 distance: 0.000 
+End of epoch 160 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000792
+End of epoch 161 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000772
+(epoch: 162, iters: 11, time: 0.721, data: 0.001) D_A: 0.059 G_A: 0.842 idt_A: 0.313 G_ATTACK: -29.913 distance: 0.000 
+End of epoch 162 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000752
+End of epoch 163 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000733
+(epoch: 164, iters: 13, time: 1.134, data: 0.001) D_A: 0.068 G_A: 0.453 idt_A: 0.305 G_ATTACK: -29.984 distance: 0.000 
+End of epoch 164 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000713
+End of epoch 165 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000693
+(epoch: 166, iters: 15, time: 0.726, data: 0.001) D_A: 0.018 G_A: 0.870 idt_A: 0.320 G_ATTACK: -29.782 distance: 0.000 
+End of epoch 166 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000673
+End of epoch 167 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000653
+(epoch: 168, iters: 17, time: 0.726, data: 0.001) D_A: 0.026 G_A: 0.691 idt_A: 0.299 G_ATTACK: -29.990 distance: 0.000 
+End of epoch 168 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000634
+End of epoch 169 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000614
+(epoch: 170, iters: 19, time: 0.724, data: 0.001) D_A: 0.033 G_A: 0.652 idt_A: 0.302 G_ATTACK: -29.930 distance: 0.000 
+End of epoch 170 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000594
+End of epoch 171 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000574
+(epoch: 172, iters: 21, time: 1.145, data: 0.001) D_A: 0.019 G_A: 0.848 idt_A: 0.306 G_ATTACK: -29.962 distance: 0.000 
+End of epoch 172 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000554
+End of epoch 173 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000535
+(epoch: 174, iters: 23, time: 0.725, data: 0.001) D_A: 0.037 G_A: 0.856 idt_A: 0.306 G_ATTACK: -29.974 distance: 0.000 
+End of epoch 174 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000515
+End of epoch 175 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000495
+(epoch: 176, iters: 25, time: 0.723, data: 0.001) D_A: 0.049 G_A: 0.675 idt_A: 0.302 G_ATTACK: -29.855 distance: 0.000 
+End of epoch 176 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000475
+End of epoch 177 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000455
+(epoch: 178, iters: 27, time: 0.725, data: 0.001) D_A: 0.030 G_A: 1.036 idt_A: 0.301 G_ATTACK: -29.882 distance: 0.000 
+End of epoch 178 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000436
+End of epoch 179 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000416
+(epoch: 180, iters: 29, time: 1.199, data: 0.001) D_A: 0.035 G_A: 0.751 idt_A: 0.305 G_ATTACK: -29.845 distance: 0.000 
+End of epoch 180 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000396
+End of epoch 181 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000376
+(epoch: 182, iters: 31, time: 0.724, data: 0.001) D_A: 0.036 G_A: 1.134 idt_A: 0.306 G_ATTACK: -29.848 distance: 0.000 
+End of epoch 182 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000356
+End of epoch 183 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000337
+(epoch: 184, iters: 33, time: 0.722, data: 0.001) D_A: 0.053 G_A: 0.599 idt_A: 0.300 G_ATTACK: -29.946 distance: 0.000 
+End of epoch 184 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000317
+End of epoch 185 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000297
+(epoch: 186, iters: 35, time: 0.727, data: 0.001) D_A: 0.027 G_A: 0.864 idt_A: 0.293 G_ATTACK: -29.953 distance: 0.000 
+End of epoch 186 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000277
+End of epoch 187 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000257
+(epoch: 188, iters: 37, time: 1.179, data: 0.001) D_A: 0.026 G_A: 0.904 idt_A: 0.301 G_ATTACK: -29.931 distance: 0.000 
+End of epoch 188 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000238
+End of epoch 189 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000218
+(epoch: 190, iters: 39, time: 0.726, data: 0.001) D_A: 0.014 G_A: 0.779 idt_A: 0.291 G_ATTACK: -29.970 distance: 0.000 
+End of epoch 190 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000198
+End of epoch 191 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000178
+(epoch: 192, iters: 41, time: 0.730, data: 0.001) D_A: 0.034 G_A: 0.859 idt_A: 0.294 G_ATTACK: -29.965 distance: 0.000 
+End of epoch 192 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000158
+End of epoch 193 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000139
+(epoch: 194, iters: 43, time: 0.727, data: 0.001) D_A: 0.027 G_A: 0.869 idt_A: 0.298 G_ATTACK: -29.891 distance: 0.000 
+End of epoch 194 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000119
+End of epoch 195 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000099
+(epoch: 196, iters: 45, time: 1.198, data: 0.001) D_A: 0.033 G_A: 0.693 idt_A: 0.297 G_ATTACK: -29.849 distance: 0.000 
+End of epoch 196 / 200 	 Time Taken: 36 sec
+learning rate = 0.0000079
+End of epoch 197 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000059
+(epoch: 198, iters: 47, time: 0.728, data: 0.001) D_A: 0.020 G_A: 0.824 idt_A: 0.293 G_ATTACK: -29.967 distance: 0.000 
+End of epoch 198 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000040
+End of epoch 199 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000020
+(epoch: 200, iters: 49, time: 0.730, data: 0.001) D_A: 0.015 G_A: 0.832 idt_A: 0.300 G_ATTACK: -29.918 distance: 0.000 
+saving the model at the end of epoch 200, iters 9800
+End of epoch 200 / 200 	 Time Taken: 35 sec
+learning rate = 0.0000000

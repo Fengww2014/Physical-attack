@@ -1,0 +1,10 @@
+参数说明：
+1. 本代码是基于cyclegan（https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix）开发的，主要加入了attackloss模块。
+2. 在run.sh中主要需要调节的参数包括：
+    model： 使用的攻击模型，其中attack_et_tar_gan是最终采用的模型。其他在model目录下的模型也大同小异，主要是EOT模块设计略有区别。
+    ATTACK： 攻击loss的权重
+    niter： iteration的个数
+    input_label： 输入图像的真实分类标签（0-999）
+    target： target类的标签（0-999）
+    ex_name： 保存实验结果的目录名，可随心设置
+3. 其他超参数都采用了和cyclegan原始代码中相同的默认值
