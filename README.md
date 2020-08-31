@@ -4,7 +4,7 @@
 2. Organize these translation datasets as:
 
        meta_datarooot
-       ├── Tech2Snake
+       ├── Tench2Snake
        |   ├── trainA
        |   ├── trainB
        |   
