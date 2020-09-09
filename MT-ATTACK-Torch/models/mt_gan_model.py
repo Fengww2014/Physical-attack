@@ -14,6 +14,116 @@ import matplotlib
 
 matplotlib.use('AGG')
 import matplotlib.pyplot as plt
+
+
+class AttackLoss(torch.nn.Module):
+    def __init__(self, target, ori):
+        super(AttackLoss, self).__init__()
+        self.model1 = models.vgg16(pretrained=True).cuda()
+        if target < 0:
+            self.isTarget = False
+            self.target_class = -target #target label in imagenet
+        else:
+            self.isTarget = True
+            self.target_class = target #target label in imagenet
+            self.ori = ori
+     
+     
+    def Transformations(self, img_torch):
+        def Rotation(img_torch, angle):
+            theta = torch.tensor([
+                [math.cos(angle),math.sin(-angle),0],
+                [math.sin(angle),math.cos(angle) ,0]
+            ], dtype=torch.float) + (torch.rand(2,3)-0.5)/5
+            grid = functional.affine_grid(theta.unsqueeze(0), img_torch.unsqueeze(0).size()).cuda()
+            output = functional.grid_sample(img_torch.unsqueeze(0), grid)
+            new_img_torch = output[0]
+            return new_img_torch
+        
+        def Resize(img_torch, times):
+            tmp = 1.0/times
+            theta = torch.tensor([
+                [tmp, 0  , 0],
+                [0  , tmp, 0]
+            ], dtype=torch.float) + (torch.rand(2,3)-0.5)/5
+            grid = functional.affine_grid(theta.unsqueeze(0), img_torch.unsqueeze(0).size()).cuda()
+            output = functional.grid_sample(img_torch.unsqueeze(0), grid)
+            new_img_torch = output[0]
+            return new_img_torch
+        Img0 = img_torch + torch.randn_like(img_torch) * 0.1
+        Img1 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 0.8+(np.random.rand()-0.5)*0.1) 
+        Img2 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 1.2+(np.random.rand()-0.5)*0.1)
+        Img3 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 0.6+(np.random.rand()-0.5)*0.1) 
+        Img28 = Rotation(img_torch, (np.random.rand()-0.5)*10*math.pi/180)
+        Img4 = Rotation(img_torch, (10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img5 = Rotation(img_torch, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img6 = Rotation(img_torch, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img7 = Rotation(img_torch, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img29 = Rotation(Img1, (np.random.rand()-0.5)*10*math.pi/180)
+        Img8 = Rotation(Img1, (10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img9 = Rotation(Img1, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img10 = Rotation(Img1, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img11 = Rotation(Img1, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img30 = Rotation(Img2, (np.random.rand()-0.5)*10*math.pi/180)
+        Img12 = Rotation(Img2, (10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img13 = Rotation(Img2, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img14 = Rotation(Img2, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img15 = Rotation(Img2, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img31 = Rotation(Img3, (np.random.rand()-0.5)*10*math.pi/180)
+        Img16 = Rotation(Img3, (10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img17 = Rotation(Img3, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img18 = Rotation(Img3, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img19 = Rotation(Img3, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img20 = Rotation(img_torch, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img21 = Rotation(img_torch, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img22 = Rotation(Img1, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img23 = Rotation(Img1, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img24 = Rotation(Img2, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img25 = Rotation(Img2, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img26 = Rotation(Img3, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        Img27 = Rotation(Img3, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        TransImgs = torch.stack((img_torch,img_torch,img_torch,Img0,Img0,Img1,Img1,Img2,Img2,Img3,Img3,Img4,Img5,Img6,Img7,Img8,Img9,Img10,Img11,Img12,Img13,Img14,Img15,Img16,Img17,Img18,Img19,Img20,Img21,Img22,Img23,Img24,Img25,Img26,Img27, Img28, Img29, Img30, Img31),dim = 0)
+        return TransImgs
+
+    def forward(self, Images): 
+        batch_size_cur = Images.shape[0]
+        attackloss1 = 0.0
+        for i in range(batch_size_cur):
+            I = Images[i,:].squeeze()
+            TransImg = self.Transformations(I)
+            output1 = self.model1(TransImg)
+            #print('max:' , (functional.softmax(output)).max(1))
+            #print('target:' ,functional.softmax(output)[:, self.target_class])
+            if self.isTarget == True:
+                attackloss1 = attackloss1 - (functional.softmax(output1)[:, self.target_class]).mean() + (functional.softmax(output1)[:, self.ori]).mean()
+            else: 
+                attackloss1 += (functional.softmax(output1)[:, self.target_class]).mean()
+            #print('loss:', attackloss)
+        attackloss = attackloss1/batch_size_cur
+        return attackloss
+
+
+class PercepLoss(torch.nn.Module):
+    def __init__(self):
+        super(PercepLoss, self).__init__()
+        self.original_model = models.resnet50(pretrained=True)
+        self.criterionPercep = torch.nn.MSELoss()
+        self.features = torch.nn.Sequential(
+            # stop at conv4
+            *list(self.original_model.children())[:8]
+        )
+    def forward(self, Images_r, Images_f):
+        batch_size_cur = Images_r.shape[0]
+        perceploss = 0.0
+        for i in range(batch_size_cur):
+            I_r = Images_r[i,:].squeeze()
+            I_f = Images_f[i,:].squeeze()
+            features_r = self.features(I_r)
+            features_f = self.features(I_f)
+            perceploss += self.criterionPercep(features_r, features_f)
+        return perceploss
+
+
 class MtGANModel(BaseModel):
     '''
     Our model is based on CycleGAN's network architecture
@@ -24,8 +134,10 @@ class MtGANModel(BaseModel):
         if is_train:
             parser.add_argument('--lambda_A', type=float, default=10.0, help='weight for cycle loss (A -> B -> A)')
             parser.add_argument('--lambda_B', type=float, default=10.0, help='weight for cycle loss (B -> A -> B)')
-            parser.add_argument('--lambda_identity', type=float, default=5, help='use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1')
-
+            parser.add_argument('--lambda_identity', type=float, default=0, help='use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1')
+            parser.add_argument('--ori', type=int, default=0, help='ori label')
+            parser.add_argument('--target', type=int, default=0, help='target label')
+            parser.add_argument('--lambda_ATTACK_B', type=float, default=0.0, help='weight for ATTACK loss for adversarial attack in fake B')
         return parser
 
     def __init__(self, opt):
@@ -50,6 +162,7 @@ class MtGANModel(BaseModel):
         self.criterionGAN = networks.GANLoss(opt.gan_mode).to(self.device)  
         self.criterionCycle = torch.nn.L1Loss()
         self.criterionIdt = torch.nn.L1Loss()
+        self.criterionATTACK = AttackLoss(opt.target, opt.ori)
         self.optimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
         self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
         self.optimizers.append(self.optimizer_G)
@@ -93,6 +206,7 @@ class MtGANModel(BaseModel):
         lambda_idt = self.opt.lambda_identity
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
+        lambda_att_B = self.opt.lambda_ATTACK_B
         if lambda_idt > 0:
             
             self.loss_idt_A = self.criterionIdt(idt_A, real_B) * lambda_B * lambda_idt
@@ -109,12 +223,16 @@ class MtGANModel(BaseModel):
         self.loss_cycle_A = self.criterionCycle(rec_A, real_A) * lambda_A
         
         self.loss_cycle_B = self.criterionCycle(rec_B, real_B) * lambda_B
-        
-        loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B
-        return loss_G
-    def backward_D_basic(self, netD, real, fake):
 
-     
+        if lambda_att_B > 0:
+            self.loss_G_ATTACK = self.criterionATTACK(self.fake_B)* lambda_att_B
+        else:
+            self.loss_G_ATTACK = 0
+        
+        loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_G_ATTACK + self.loss_idt_A + self.loss_idt_B
+        return loss_G
+
+    def backward_D_basic(self, netD, real, fake):
         pred_real = netD(real)
         loss_D_real = self.criterionGAN(pred_real, True)
        
@@ -124,6 +242,7 @@ class MtGANModel(BaseModel):
         loss_D = (loss_D_real + loss_D_fake) * 0.5
         loss_D.backward()
         return loss_D    
+
     def forward_G(self, real_A, real_B, vars_GA, vars_GB, vars_DA, vars_DB):
         fake_B = self.netG_A(real_A, vars=vars_GA, bn_training=True)
         rec_A = self.netG_B(fake_B, vars=vars_GB, bn_training=True)  
@@ -143,10 +262,11 @@ class MtGANModel(BaseModel):
         pred_real_B = self.netD_A(real_B, vars=vars_DA, bn_training=True)
         pred_real_A = self.netD_B(real_A, vars=vars_DB, bn_training=True)
         return pred_real_B, pred_fake_B, pred_real_A, pred_fake_A
+
     def denorm(self, x):
-        
         out = (x + 1) / 2
         return out.clamp_(0, 1)
+
     def meta_train(self, test_dataset_indx, total_iters):
         """MT-GAN training process"""
         task_num, setsz, c_, h, w = self.real_A_support.size()
@@ -222,28 +342,28 @@ class MtGANModel(BaseModel):
             self.loss_D_A_q, self.loss_D_B_q = self.D_losses(self.pred_real_B_q, self.pred_fake_B_q, self.pred_real_A_q, self.pred_fake_A_q)
             lossD_A_q +=  self.loss_D_A_q
             lossD_B_q +=  self.loss_D_B_q
-        if total_iters % 50 == 0:        
-            x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_real_A.jpg'.format(test_dataset_indx, total_iters)) 
-            save_image(self.denorm(self.real_A_q.data.cpu()), x_A_path)
-            print("[*] Samples saved: {}".format(x_A_path))
+        # if total_iters % 50 == 0:        
+        #     x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_real_A.jpg'.format(test_dataset_indx, total_iters)) 
+        #     save_image(self.denorm(self.real_A_q.data.cpu()), x_A_path)
+        #     print("[*] Samples saved: {}".format(x_A_path))
            
             
-            x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_fake_B.jpg'.format(test_dataset_indx,total_iters)) 
-            save_image(self.denorm(self.fake_B_q.data.cpu()), x_AB_path)
+        #     x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_fake_B.jpg'.format(test_dataset_indx,total_iters)) 
+        #     save_image(self.denorm(self.fake_B_q.data.cpu()), x_AB_path)
             
-            x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_rec_A.jpg'.format(test_dataset_indx,total_iters)) 
-            save_image(self.denorm(self.rec_A_q.data.cpu()), x_ABA_path)
+        #     x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_rec_A.jpg'.format(test_dataset_indx,total_iters)) 
+        #     save_image(self.denorm(self.rec_A_q.data.cpu()), x_ABA_path)
             
-            x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_real_B.jpg'.format(test_dataset_indx,total_iters)) 
-            save_image(self.denorm(self.real_B_q.data.cpu()), x_B_path)
-            print("[*] Samples saved: {}".format(x_B_path))
+        #     x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_real_B.jpg'.format(test_dataset_indx,total_iters)) 
+        #     save_image(self.denorm(self.real_B_q.data.cpu()), x_B_path)
+        #     print("[*] Samples saved: {}".format(x_B_path))
            
             
-            x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_fake_A.jpg'.format(test_dataset_indx,total_iters)) 
-            save_image(self.denorm(self.fake_A_q.data.cpu()), x_BA_path)
+        #     x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_fake_A.jpg'.format(test_dataset_indx,total_iters)) 
+        #     save_image(self.denorm(self.fake_A_q.data.cpu()), x_BA_path)
             
-            x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_rec_B.jpg'.format(test_dataset_indx,total_iters)) 
-            save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)    
+        #     x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_rec_B.jpg'.format(test_dataset_indx,total_iters)) 
+        #     save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)    
 
 
         # optimize meta parameters
