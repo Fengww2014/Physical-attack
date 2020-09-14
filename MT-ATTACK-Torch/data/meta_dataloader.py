@@ -117,8 +117,8 @@ class MetaDataloader(Dataset):
             self.query_A_batch.append(query_A)  # append sets to current sets\
             self.support_B_batch.append(support_B)  # append set to current sets
             self.query_B_batch.append(query_B)  # append sets to current sets
-            
-        print('Finished create batches of the datasets...')
+         
+        print('Finished create batches of the datasets...support_A/query_A:%d,%d...support_B/query_B:%d,%d' % (len(self.support_A_batch),len(self.query_A_batch),len(self.support_B_batch),len(self.query_B_batch)))
         
 
     def __getitem__(self, index):
@@ -148,6 +148,7 @@ class MetaDataloader(Dataset):
 
 
         for i, path in enumerate(flatten_support_A):
+            # print(i,path)
             support_A[i] = self.transform(path)
 
         for i, path in enumerate(flatten_query_A):
@@ -158,7 +159,6 @@ class MetaDataloader(Dataset):
 
         for i, path in enumerate(flatten_query_B):
             query_B[i] = self.transform(path)
-
         return support_A, support_B, query_A, query_B
     def __len__(self):
         

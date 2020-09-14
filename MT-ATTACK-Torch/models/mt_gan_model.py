@@ -2,6 +2,7 @@ import torch
 import itertools
 from util.image_pool import ImagePool
 from .base_model import BaseModel
+from torchvision import models
 from . import networks
 import random
 from .learner import generator, discriminator, generator_st, discriminator_st
@@ -11,6 +12,7 @@ import numpy as np
 from  torch.nn import functional as F
 # from logger import Logger
 import matplotlib
+import math
 
 matplotlib.use('AGG')
 import matplotlib.pyplot as plt
@@ -35,8 +37,8 @@ class AttackLoss(torch.nn.Module):
                 [math.cos(angle),math.sin(-angle),0],
                 [math.sin(angle),math.cos(angle) ,0]
             ], dtype=torch.float) + (torch.rand(2,3)-0.5)/5
-            grid = functional.affine_grid(theta.unsqueeze(0), img_torch.unsqueeze(0).size()).cuda()
-            output = functional.grid_sample(img_torch.unsqueeze(0), grid)
+            grid = F.affine_grid(theta.unsqueeze(0), img_torch.unsqueeze(0).size()).cuda()
+            output = F.grid_sample(img_torch.unsqueeze(0), grid)
             new_img_torch = output[0]
             return new_img_torch
         
@@ -46,8 +48,8 @@ class AttackLoss(torch.nn.Module):
                 [tmp, 0  , 0],
                 [0  , tmp, 0]
             ], dtype=torch.float) + (torch.rand(2,3)-0.5)/5
-            grid = functional.affine_grid(theta.unsqueeze(0), img_torch.unsqueeze(0).size()).cuda()
-            output = functional.grid_sample(img_torch.unsqueeze(0), grid)
+            grid = F.affine_grid(theta.unsqueeze(0), img_torch.unsqueeze(0).size()).cuda()
+            output = F.grid_sample(img_torch.unsqueeze(0), grid)
             new_img_torch = output[0]
             return new_img_torch
         Img0 = img_torch + torch.randn_like(img_torch) * 0.1
@@ -90,14 +92,15 @@ class AttackLoss(torch.nn.Module):
         attackloss1 = 0.0
         for i in range(batch_size_cur):
             I = Images[i,:].squeeze()
+            # print("I shape:", I.shape)
             TransImg = self.Transformations(I)
             output1 = self.model1(TransImg)
             #print('max:' , (functional.softmax(output)).max(1))
             #print('target:' ,functional.softmax(output)[:, self.target_class])
             if self.isTarget == True:
-                attackloss1 = attackloss1 - (functional.softmax(output1)[:, self.target_class]).mean() + (functional.softmax(output1)[:, self.ori]).mean()
+                attackloss1 = attackloss1 - (F.softmax(output1)[:, self.target_class]).mean() + (F.softmax(output1)[:, self.ori]).mean()
             else: 
-                attackloss1 += (functional.softmax(output1)[:, self.target_class]).mean()
+                attackloss1 += (F.softmax(output1)[:, self.target_class]).mean()
             #print('loss:', attackloss)
         attackloss = attackloss1/batch_size_cur
         return attackloss
@@ -134,7 +137,7 @@ class MtGANModel(BaseModel):
         if is_train:
             parser.add_argument('--lambda_A', type=float, default=10.0, help='weight for cycle loss (A -> B -> A)')
             parser.add_argument('--lambda_B', type=float, default=10.0, help='weight for cycle loss (B -> A -> B)')
-            parser.add_argument('--lambda_identity', type=float, default=0, help='use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1')
+            parser.add_argument('--lambda_identity', type=float, default=5, help='use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1')
             parser.add_argument('--ori', type=int, default=0, help='ori label')
             parser.add_argument('--target', type=int, default=0, help='target label')
             parser.add_argument('--lambda_ATTACK_B', type=float, default=0.0, help='weight for ATTACK loss for adversarial attack in fake B')
@@ -185,7 +188,8 @@ class MtGANModel(BaseModel):
         #     os.makedirs(self.log_dir)
         # self.logger = Logger(self.log_dir)
     def set_input(self, real_A_support, real_B_support, real_A_query, real_B_query):
-        if random.choice([True, False]):
+        # if random.choice([True, False]):
+        if random.choice([True, True]):
             self.real_A_support = real_A_support.to(self.device)
             self.real_B_support = real_B_support.to(self.device)
             self.real_A_query = real_A_query.to(self.device)
@@ -223,6 +227,9 @@ class MtGANModel(BaseModel):
         self.loss_cycle_A = self.criterionCycle(rec_A, real_A) * lambda_A
         
         self.loss_cycle_B = self.criterionCycle(rec_B, real_B) * lambda_B
+        
+        ######
+        # print("self.fake_B shape:", self.fake_B.shape)
 
         if lambda_att_B > 0:
             self.loss_G_ATTACK = self.criterionATTACK(self.fake_B)* lambda_att_B
@@ -480,7 +487,7 @@ class MtGANModel(BaseModel):
                         log += ", {}: {:.4f}".format(tag, value)
                         # self.logger.scalar_summary(tag, value, k)
                     print(log)
-                if (k+1) % 500 == 0:
+                if (k+1) % 500 == 0 :
                     self.fake_B_q = netG_A(self.real_A_q) 
                     self.rec_A_q = netG_B(self.fake_B_q)  
                     self.fake_A_q = netG_B(self.real_B_q)  
@@ -493,6 +500,7 @@ class MtGANModel(BaseModel):
                     save_image(self.denorm(self.rec_A_q.data.cpu()), x_ABA_path)
                     x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_rec_B.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)
+                    print("[*] fake Samples saved")
                 
                
            

@@ -10,15 +10,16 @@
               epoch_count: 1                             
             finetune_step: 1000                          
                  gan_mode: lsgan                         
-                  gpu_ids: 0                             
+                  gpu_ids: 5,1,2,7                       	[default: 0]
                      imgc: 3                             
                 init_gain: 0.02                          
                 init_type: normal                        
                  input_nc: 3                             
                   isTrain: True                          	[default: None]
-                    k_qry: 10                            
-                    k_spt: 10                            
+                    k_qry: 1                             	[default: 10]
+                    k_spt: 1                             	[default: 10]
                  lambda_A: 10.0                          
+          lambda_ATTACK_B: 1.0                           	[default: 0.0]
                  lambda_B: 10.0                          
           lambda_identity: 5                             
                 load_iter: 500                           	[default: 500]
@@ -42,6 +43,7 @@
                   no_flip: False                         
                      norm: instance                      
               num_threads: 4                             
+                      ori: 215                           	[default: 0]
                 output_nc: 3                             
                     phase: train                         
                 pool_size: 50                            
@@ -49,10 +51,11 @@
          save_latest_freq: 500                           
            serial_batches: False                         
                    suffix:                               
+                   target: 800                           	[default: 0]
                  task_num: 2                             
              task_num_val: 1                             
                 update_lr: 0.0001                        
-              update_step: 2                             	[default: 100]
+              update_step: 50                            	[default: 100]
          update_step_test: 10                            
                   verbose: False                         
 ----------------- End -------------------
