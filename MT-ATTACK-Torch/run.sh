@@ -12,4 +12,4 @@ target=800
 
 input_label=215
 
-python train.py --meta_dataroot "image" --update_step 50 --gpu_ids $cuda --lambda_ATTACK_B 1 --k_spt 1 --k_qry 1 --ori $input_label --target $target --name $ex_name
+python train.py --meta_dataroot "image" --update_step 50 --gpu_ids $cuda --lambda_ATTACK_B $ATTACK --k_spt 1 --k_qry 1 --ori $input_label --target $target --name $ex_name

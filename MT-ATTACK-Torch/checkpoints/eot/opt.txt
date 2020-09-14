@@ -3,7 +3,7 @@
                     beta1: 0.5                           
           checkpoints_dir: ./checkpoints                 
            continue_train: False                         
-                crop_size: 128                           
+                crop_size: 256                           
              dataset_mode: unaligned                     
                 direction: AtoB                          
                     epoch: latest                        
@@ -19,11 +19,11 @@
                     k_qry: 1                             	[default: 10]
                     k_spt: 1                             	[default: 10]
                  lambda_A: 10.0                          
-          lambda_ATTACK_B: 1.0                           	[default: 0.0]
+          lambda_ATTACK_B: 30.0                          	[default: 0.0]
                  lambda_B: 10.0                          
           lambda_identity: 5                             
                 load_iter: 500                           	[default: 500]
-                load_size: 136                           
+                load_size: 286                           
                        lr: 0.0002                        
            lr_decay_iters: 50                            
                 lr_policy: linear                        

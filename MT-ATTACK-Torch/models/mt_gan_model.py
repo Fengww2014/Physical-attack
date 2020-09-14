@@ -417,10 +417,10 @@ class MtGANModel(BaseModel):
             self.real_B = self.real_B_support[i]
             self.real_A_q = self.real_A_query[i]
             self.real_B_q = self.real_B_query[i]
-            x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_real_A.jpg'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
+            x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_real_A.png'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
             save_image(self.denorm(self.real_A_q.data.cpu()), x_A_path)
             print("[*] Samples saved: {}".format(x_A_path))
-            x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_real_B.jpg'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
+            x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_real_B.png'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
             save_image(self.denorm(self.real_B_q.data.cpu()), x_B_path)
             print("[*] Samples saved: {}".format(x_B_path))
             
@@ -492,13 +492,13 @@ class MtGANModel(BaseModel):
                     self.rec_A_q = netG_B(self.fake_B_q)  
                     self.fake_A_q = netG_B(self.real_B_q)  
                     self.rec_B_q = netG_A(self.fake_A_q)   
-                    x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_fake_B.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_fake_B.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.fake_B_q.data.cpu()), x_AB_path)
-                    x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_fake_A.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_fake_A.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.fake_A_q.data.cpu()), x_BA_path)
-                    x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_rec_A.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_rec_A.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.rec_A_q.data.cpu()), x_ABA_path)
-                    x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_rec_B.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_rec_B.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)
                     print("[*] fake Samples saved")
                 
@@ -533,11 +533,11 @@ class MtGANModel(BaseModel):
             self.real_A_q = self.real_A_query[i]
             self.real_B_q = self.real_B_query[i]
             
-            x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_real_A.jpg'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
+            x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_real_A.png'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
             save_image(self.denorm(self.real_A_q.data.cpu()), x_A_path)
             print("[*] Samples saved: {}".format(x_A_path))
             
-            x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_real_B.jpg'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
+            x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_real_B.png'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
             save_image(self.denorm(self.real_B_q.data.cpu()), x_B_path)
             print("[*] Samples saved: {}".format(x_B_path))
             self.cyc_loss_cycle = []
@@ -609,13 +609,13 @@ class MtGANModel(BaseModel):
                     self.rec_A_q = netG_B(self.fake_B_q)   
                     self.fake_A_q = netG_B(self.real_B_q)  
                     self.rec_B_q = netG_A(self.fake_A_q)   
-                    x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_fake_B.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_fake_B.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.fake_B_q.data.cpu()), x_AB_path)
-                    x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_fake_A.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_fake_A.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.fake_A_q.data.cpu()), x_BA_path)    
-                    x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_rec_A.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_rec_A.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.rec_A_q.data.cpu()), x_ABA_path)
-                    x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_rec_B.jpg'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_rec_B.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)     
     def plot_training_loss(self,test_dataset_indx):
         plt.plot(range(self.finetune_step-1), self.cyc_loss_cycle, color='green', label='CycleGAN', linestyle='--')
