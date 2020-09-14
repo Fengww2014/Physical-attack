@@ -8,7 +8,7 @@
        |   ├── trainA
        |   ├── trainB
        |   
-       ├── Cat2pSnake
+       ├── Cat2Snake
            ├── trainA
            ├── trainB
        ...
