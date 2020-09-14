@@ -85,6 +85,7 @@ class AttackLoss(torch.nn.Module):
         Img26 = Rotation(Img3, (30+(np.random.rand()-0.5)*10)*math.pi/180)
         Img27 = Rotation(Img3, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
         TransImgs = torch.stack((img_torch,img_torch,img_torch,Img0,Img0,Img1,Img1,Img2,Img2,Img3,Img3,Img4,Img5,Img6,Img7,Img8,Img9,Img10,Img11,Img12,Img13,Img14,Img15,Img16,Img17,Img18,Img19,Img20,Img21,Img22,Img23,Img24,Img25,Img26,Img27, Img28, Img29, Img30, Img31),dim = 0)
+
         return TransImgs
 
     def forward(self, Images): 
@@ -93,7 +94,7 @@ class AttackLoss(torch.nn.Module):
         for i in range(batch_size_cur):
             I = Images[i,:].squeeze()
             # print("I shape:", I.shape)
-            TransImg = self.Transformations(I)
+            TransImg = I.unsqueeze(0) # self.Transformations(I)
             output1 = self.model1(TransImg)
             #print('max:' , (functional.softmax(output)).max(1))
             #print('target:' ,functional.softmax(output)[:, self.target_class])
