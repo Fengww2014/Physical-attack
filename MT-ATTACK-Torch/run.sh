@@ -1,6 +1,6 @@
 set -ex
 
-cuda=5,1,6,7
+cuda=0
 ex_name=eot
 # model=attack_et_tar_gan
 

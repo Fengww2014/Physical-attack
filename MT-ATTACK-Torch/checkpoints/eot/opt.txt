@@ -10,7 +10,7 @@
               epoch_count: 1                             
             finetune_step: 1000                          
                  gan_mode: lsgan                         
-                  gpu_ids: 5,1,6,7                       	[default: 0]
+                  gpu_ids: 0                             
                      imgc: 3                             
                 init_gain: 0.02                          
                 init_type: normal                        
