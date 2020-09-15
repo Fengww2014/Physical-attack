@@ -52,39 +52,41 @@ class AttackLoss(torch.nn.Module):
             output = F.grid_sample(img_torch.unsqueeze(0), grid)
             new_img_torch = output[0]
             return new_img_torch
-        Img0 = img_torch + torch.randn_like(img_torch) * 0.1
+
+        Img0 = img_torch + torch.randn_like(img_torch) * 0.01
         Img1 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 0.8+(np.random.rand()-0.5)*0.1) 
         Img2 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 1.2+(np.random.rand()-0.5)*0.1)
         Img3 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 0.6+(np.random.rand()-0.5)*0.1) 
-        Img28 = Rotation(img_torch, (np.random.rand()-0.5)*10*math.pi/180)
+        # Img28 = Rotation(img_torch, (np.random.rand()-0.5)*10*math.pi/180)
         Img4 = Rotation(img_torch, (10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img5 = Rotation(img_torch, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img6 = Rotation(img_torch, (20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img7 = Rotation(img_torch, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img29 = Rotation(Img1, (np.random.rand()-0.5)*10*math.pi/180)
-        Img8 = Rotation(Img1, (10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img9 = Rotation(Img1, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img10 = Rotation(Img1, (20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img11 = Rotation(Img1, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img30 = Rotation(Img2, (np.random.rand()-0.5)*10*math.pi/180)
-        Img12 = Rotation(Img2, (10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img13 = Rotation(Img2, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img14 = Rotation(Img2, (20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img15 = Rotation(Img2, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img31 = Rotation(Img3, (np.random.rand()-0.5)*10*math.pi/180)
-        Img16 = Rotation(Img3, (10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img17 = Rotation(Img3, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img18 = Rotation(Img3, (20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img19 = Rotation(Img3, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img20 = Rotation(img_torch, (30+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img21 = Rotation(img_torch, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img22 = Rotation(Img1, (30+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img23 = Rotation(Img1, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img24 = Rotation(Img2, (30+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img25 = Rotation(Img2, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img26 = Rotation(Img3, (30+(np.random.rand()-0.5)*10)*math.pi/180)
-        Img27 = Rotation(Img3, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
-        TransImgs = torch.stack((img_torch,img_torch,img_torch,Img0,Img0,Img1,Img1,Img2,Img2,Img3,Img3,Img4,Img5,Img6,Img7,Img8,Img9,Img10,Img11,Img12,Img13,Img14,Img15,Img16,Img17,Img18,Img19,Img20,Img21,Img22,Img23,Img24,Img25,Img26,Img27, Img28, Img29, Img30, Img31),dim = 0)
+        # Img5 = Rotation(img_torch, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img6 = Rotation(img_torch, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img7 = Rotation(img_torch, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img29 = Rotation(Img1, (np.random.rand()-0.5)*10*math.pi/180)
+        # Img8 = Rotation(Img1, (10+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img9 = Rotation(Img1, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img10 = Rotation(Img1, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img11 = Rotation(Img1, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img30 = Rotation(Img2, (np.random.rand()-0.5)*10*math.pi/180)
+        # Img12 = Rotation(Img2, (10+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img13 = Rotation(Img2, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img14 = Rotation(Img2, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img15 = Rotation(Img2, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img31 = Rotation(Img3, (np.random.rand()-0.5)*10*math.pi/180)
+        # Img16 = Rotation(Img3, (10+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img17 = Rotation(Img3, -(10+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img18 = Rotation(Img3, (20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img19 = Rotation(Img3, -(20+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img20 = Rotation(img_torch, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img21 = Rotation(img_torch, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img22 = Rotation(Img1, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img23 = Rotation(Img1, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img24 = Rotation(Img2, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img25 = Rotation(Img2, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img26 = Rotation(Img3, (30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # Img27 = Rotation(Img3, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
+        # TransImgs = torch.stack((img_torch,img_torch,img_torch,Img0,Img0,Img1,Img1,Img2,Img2,Img3,Img3,Img4,Img5,Img6,Img7,Img8,Img9,Img10,Img11,Img12,Img13,Img14,Img15,Img16,Img17,Img18,Img19,Img20,Img21,Img22,Img23,Img24,Img25,Img26,Img27, Img28, Img29, Img30, Img31),dim = 0)
+        TransImgs = torch.stack((img_torch,Img0),dim = 0)
 
         return TransImgs
 
@@ -94,16 +96,18 @@ class AttackLoss(torch.nn.Module):
         for i in range(batch_size_cur):
             I = Images[i,:].squeeze()
             # print("I shape:", I.shape)
-            TransImg = I.unsqueeze(0) # self.Transformations(I)
+            TransImg = self.Transformations(I)
             output1 = self.model1(TransImg)
             #print('max:' , (functional.softmax(output)).max(1))
             #print('target:' ,functional.softmax(output)[:, self.target_class])
             if self.isTarget == True:
+                # print(F.softmax(output1)[:, self.target_class].mean(),F.softmax(output1)[:, self.ori].mean())
                 attackloss1 = attackloss1 - (F.softmax(output1)[:, self.target_class]).mean() + (F.softmax(output1)[:, self.ori]).mean()
             else: 
                 attackloss1 += (F.softmax(output1)[:, self.target_class]).mean()
             #print('loss:', attackloss)
         attackloss = attackloss1/batch_size_cur
+        # print("-------",attackloss)
         return attackloss
 
 
@@ -332,9 +336,10 @@ class MtGANModel(BaseModel):
                 loss['G/loss_idt_A'] = self.loss_idt_A.item()
                 loss['GA/loss_G_B'] = self.loss_G_B.item()
                 loss['GA/loss_cycle_B'] = self.loss_cycle_B.item()
+                loss['G/loss_ATTACK'] = self.loss_G_ATTACK.item()
                 loss['G/loss_idt_B'] = self.loss_idt_B.item()
                 
-                if (k) % 10 == 0:
+                if (k) % 5 == 0:
                     log = "Intra task training, test_dataset_indx [{}], Iteration [{}/{}/{}]".format(test_dataset_indx, total_iters, k, self.update_step)
                     for tag, value in loss.items():
                         log += ", {}: {:.4f}".format(tag, value)
@@ -410,6 +415,7 @@ class MtGANModel(BaseModel):
         lossD_A_q = 0
         lossD_B_q = 0
         lossG_q = 0
+        lambda_att_B = self.opt.lambda_ATTACK_B
         lambda_idt = self.opt.lambda_identity
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
@@ -418,10 +424,10 @@ class MtGANModel(BaseModel):
             self.real_B = self.real_B_support[i]
             self.real_A_q = self.real_A_query[i]
             self.real_B_q = self.real_B_query[i]
-            x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_real_A.png'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
+            x_A_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_{}_ft_real_A.png'.format(test_dataset_indx,self.finetune_step,total_iters2, total_iters)) 
             save_image(self.denorm(self.real_A_q.data.cpu()), x_A_path)
             print("[*] Samples saved: {}".format(x_A_path))
-            x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_real_B.png'.format(test_dataset_indx,self.finetune_step,total_iters2)) 
+            x_B_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_{}_ft_real_B.png'.format(test_dataset_indx,self.finetune_step,total_iters2,total_iters)) 
             save_image(self.denorm(self.real_B_q.data.cpu()), x_B_path)
             print("[*] Samples saved: {}".format(x_B_path))
             
@@ -447,6 +453,11 @@ class MtGANModel(BaseModel):
                     self.loss_idt_A = 0
                     self.loss_idt_B = 0
 
+                if lambda_att_B > 0:
+                    self.loss_G_ATTACK = self.criterionATTACK(self.fake_B)* lambda_att_B
+                else:
+                    self.loss_G_ATTACK = 0
+
                
                 self.loss_G_A = self.criterionGAN(netD_A(self.fake_B), True)
                 
@@ -456,7 +467,7 @@ class MtGANModel(BaseModel):
                 
                 self.loss_cycle_B = self.criterionCycle(self.rec_B, self.real_B) * lambda_B
                 
-                self.loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B
+                self.loss_G = self.loss_G_ATTACK + self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B
                 self.loss_G.backward()
                 optimizer_G.step() 
                 
@@ -479,8 +490,10 @@ class MtGANModel(BaseModel):
                     loss['MTGA/loss_cycle_A'] = self.loss_cycle_A.item()
                     loss['MTGA/loss_idt_A'] = self.loss_idt_A.item()
                     loss['MTGA/loss_G_B'] = self.loss_G_B.item()
+                    loss['MTGAN/loss_G_ATTACK'] = self.loss_G_ATTACK.item()
                     loss['MTGA/loss_cycle_B'] = self.loss_cycle_B.item()
                     loss['MTGB/loss_idt_B'] = self.loss_idt_B.item()
+           
                     
                     
                     log = "During fine tuning, test_dataset_indx [{}], Iteration [{}/{}/{}]".format(test_dataset_indx, total_iters, k, self.update_step)
@@ -493,13 +506,13 @@ class MtGANModel(BaseModel):
                     self.rec_A_q = netG_B(self.fake_B_q)  
                     self.fake_A_q = netG_B(self.real_B_q)  
                     self.rec_B_q = netG_A(self.fake_A_q)   
-                    x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_fake_B.png'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_AB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_{}_ft_fake_B.png'.format(test_dataset_indx,k+1,total_iters2,total_iters)) 
                     save_image(self.denorm(self.fake_B_q.data.cpu()), x_AB_path)
-                    x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_fake_A.png'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_BA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_{}_ft_fake_A.png'.format(test_dataset_indx,k+1,total_iters2,total_iters)) 
                     save_image(self.denorm(self.fake_A_q.data.cpu()), x_BA_path)
-                    x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_rec_A.png'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_{}_ft_rec_A.png'.format(test_dataset_indx,k+1,total_iters2,total_iters)) 
                     save_image(self.denorm(self.rec_A_q.data.cpu()), x_ABA_path)
-                    x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ft_rec_B.png'.format(test_dataset_indx,k+1,total_iters2)) 
+                    x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_{}_ft_rec_B.png'.format(test_dataset_indx,k+1,total_iters2,total_iters)) 
                     save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)
                     print("[*] fake Samples saved")
                 

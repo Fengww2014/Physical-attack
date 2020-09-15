@@ -8,7 +8,7 @@
                 direction: AtoB                          
                     epoch: latest                        
               epoch_count: 1                             
-            finetune_step: 1000                          
+            finetune_step: 500                           	[default: 1000]
                  gan_mode: lsgan                         
                   gpu_ids: 0                             
                      imgc: 3                             
@@ -16,10 +16,10 @@
                 init_type: normal                        
                  input_nc: 3                             
                   isTrain: True                          	[default: None]
-                    k_qry: 5                             	[default: 10]
-                    k_spt: 5                             	[default: 10]
+                    k_qry: 1                             	[default: 10]
+                    k_spt: 1                             	[default: 10]
                  lambda_A: 10.0                          
-          lambda_ATTACK_B: 100.0                         	[default: 0.0]
+          lambda_ATTACK_B: 10.0                          	[default: 0.0]
                  lambda_B: 10.0                          
           lambda_identity: 5                             
                 load_iter: 500                           	[default: 500]
@@ -55,7 +55,7 @@
                  task_num: 2                             
              task_num_val: 1                             
                 update_lr: 0.0001                        
-              update_step: 50                            	[default: 100]
+              update_step: 10                            	[default: 100]
          update_step_test: 10                            
                   verbose: False                         
 ----------------- End -------------------
