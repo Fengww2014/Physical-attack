@@ -146,6 +146,8 @@ class MtGANModel(BaseModel):
             parser.add_argument('--ori', type=int, default=0, help='ori label')
             parser.add_argument('--target', type=int, default=0, help='target label')
             parser.add_argument('--lambda_ATTACK_B', type=float, default=0.0, help='weight for ATTACK loss for adversarial attack in fake B')
+            parser.add_argument('--lambda_dist', type=float, default=0.0, help='weight for distance between fake and real image')
+
         return parser
 
     def __init__(self, opt):
@@ -217,6 +219,7 @@ class MtGANModel(BaseModel):
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
         lambda_att_B = self.opt.lambda_ATTACK_B
+        lambda_dist = self.opt.lambda_dist
         if lambda_idt > 0:
             
             self.loss_idt_A = self.criterionIdt(idt_A, real_B) * lambda_B * lambda_idt
@@ -234,9 +237,9 @@ class MtGANModel(BaseModel):
         
         self.loss_cycle_B = self.criterionCycle(rec_B, real_B) * lambda_B
 
-        self.l2_B = self.criterionDist(fake_B, real_B)
+        self.l2_B = self.criterionDist(fake_B, real_B) * lambda_dist
 
-        self.l2_A = self.criterionDist(fake_A, real_A)
+        self.l2_A = self.criterionDist(fake_A, real_A) * lambda_dist
         
         ######
         # print("self.fake_B shape:", self.fake_B.shape)
@@ -344,6 +347,8 @@ class MtGANModel(BaseModel):
                 loss['GA/loss_cycle_B'] = self.loss_cycle_B.item()
                 loss['G/loss_ATTACK'] = self.loss_G_ATTACK.item()
                 loss['G/loss_idt_B'] = self.loss_idt_B.item()
+                loss['G/loss_dist_B'] = self.l2_B.item()
+                loss['G/loss_dist_A'] = self.l2_A.item()
                 
                 if (k) % 5 == 0:
                     log = "Intra task training, test_dataset_indx [{}], Iteration [{}/{}/{}]".format(test_dataset_indx, total_iters, k, self.update_step)
@@ -425,6 +430,7 @@ class MtGANModel(BaseModel):
         lambda_idt = self.opt.lambda_identity
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
+        lambda_dist = self.opt.lambda_dist
         for i in range(task_num):
             self.real_A = self.real_A_support[i]
             self.real_B = self.real_B_support[i]
@@ -473,9 +479,9 @@ class MtGANModel(BaseModel):
                 
                 self.loss_cycle_B = self.criterionCycle(self.rec_B, self.real_B) * lambda_B
                 
-                self.l2_B = self.criterionIdt(self.fake_B, self.real_B)
+                self.l2_B = self.criterionIdt(self.fake_B, self.real_B) * lambda_dist
 
-                self.l2_A = self.criterionIdt(self.fake_A, self.real_A)
+                self.l2_A = self.criterionIdt(self.fake_A, self.real_A) * lambda_dist
                 
                 self.loss_G = self.loss_G_ATTACK + self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B + self.l2_A + self.l2_B
                 self.loss_G.backward()
@@ -503,6 +509,8 @@ class MtGANModel(BaseModel):
                     loss['MTGAN/loss_G_ATTACK'] = self.loss_G_ATTACK.item()
                     loss['MTGA/loss_cycle_B'] = self.loss_cycle_B.item()
                     loss['MTGB/loss_idt_B'] = self.loss_idt_B.item()
+                    loss['MTG/loss_dist_B'] = self.l2_B.item()
+                    loss['MTG/loss_dist_A'] = self.l2_A.item()
            
                     
                     
@@ -511,7 +519,7 @@ class MtGANModel(BaseModel):
                         log += ", {}: {:.4f}".format(tag, value)
                         # self.logger.scalar_summary(tag, value, k)
                     print(log)
-                if (k+1) % 500 == 0 :
+                if (k+1) % (self.finetune_step / 10) == 0 :
                     self.fake_B_q = netG_A(self.real_A_q) 
                     self.rec_A_q = netG_B(self.fake_B_q)  
                     self.fake_A_q = netG_B(self.real_B_q)  
