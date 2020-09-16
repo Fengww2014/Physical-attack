@@ -170,6 +170,7 @@ class MtGANModel(BaseModel):
         self.criterionGAN = networks.GANLoss(opt.gan_mode).to(self.device)  
         self.criterionCycle = torch.nn.L1Loss()
         self.criterionIdt = torch.nn.L1Loss()
+        self.criterionDist = torch.nn.L1Loss()
         self.criterionATTACK = AttackLoss(opt.target, opt.ori)
         self.optimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
         self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
@@ -211,7 +212,7 @@ class MtGANModel(BaseModel):
         return loss_D_A, loss_D_B
         
         
-    def G_losses(self, real_A, real_B, idt_A, idt_B, gan_A, gan_B, rec_A, rec_B):
+    def G_losses(self, real_A, real_B, idt_A, idt_B, gan_A, gan_B, rec_A, rec_B, fake_A, fake_B):
         lambda_idt = self.opt.lambda_identity
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
@@ -232,6 +233,10 @@ class MtGANModel(BaseModel):
         self.loss_cycle_A = self.criterionCycle(rec_A, real_A) * lambda_A
         
         self.loss_cycle_B = self.criterionCycle(rec_B, real_B) * lambda_B
+
+        self.l2_B = self.criterionDist(fake_B, real_B)
+
+        self.l2_A = self.criterionDist(fake_A, real_A)
         
         ######
         # print("self.fake_B shape:", self.fake_B.shape)
@@ -241,7 +246,8 @@ class MtGANModel(BaseModel):
         else:
             self.loss_G_ATTACK = 0
         
-        loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_G_ATTACK + self.loss_idt_A + self.loss_idt_B
+        loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_G_ATTACK + self.loss_idt_A + self.loss_idt_B + self.l2_A + self.l2_B
+        # print("loss_G")
         return loss_G
 
     def backward_D_basic(self, netD, real, fake):
@@ -297,7 +303,7 @@ class MtGANModel(BaseModel):
             self.real_A_q = self.real_A_query[i]
             self.real_B_q = self.real_B_query[i]
             self.fake_A, self.fake_B, self.idt_A, self.idt_B, self.gan_A, self.gan_B, self.rec_A, self.rec_B = self.forward_G(self.real_A, self.real_B, None, None, None, None)
-            self.loss_G = self.G_losses(self.real_A, self.real_B, self.idt_A, self.idt_B, self.gan_A, self.gan_B, self.rec_A, self.rec_B)
+            self.loss_G = self.G_losses(self.real_A, self.real_B, self.idt_A, self.idt_B, self.gan_A, self.gan_B, self.rec_A, self.rec_B, self.fake_A, self.fake_B)
             
             grad_A = torch.autograd.grad(self.loss_G, self.netG_A.parameters(),retain_graph=True)
             fast_weights_A = list(map(lambda p: p[1] - self.update_lr * p[0], zip(grad_A, self.netG_A.parameters())))
@@ -316,7 +322,7 @@ class MtGANModel(BaseModel):
                 # 1. run the i-th task and compute loss for k=1~update_step-1
 
                 self.fake_A, self.fake_B, self.idt_A, self.idt_B, self.gan_A, self.gan_B, self.rec_A, self.rec_B = self.forward_G(self.real_A, self.real_B, fast_weights_A, fast_weights_B, fast_weights_D_A, fast_weights_D_B)
-                self.loss_G = self.G_losses(self.real_A, self.real_B, self.idt_A, self.idt_B, self.gan_A, self.gan_B, self.rec_A, self.rec_B)
+                self.loss_G = self.G_losses(self.real_A, self.real_B, self.idt_A, self.idt_B, self.gan_A, self.gan_B, self.rec_A, self.rec_B, self.fake_A, self.fake_B)
                 grad_A = torch.autograd.grad(self.loss_G, fast_weights_A,retain_graph=True)
                 fast_weights_A = list(map(lambda p: p[1] - self.update_lr * p[0], zip(grad_A, fast_weights_A)))
                 grad_B = torch.autograd.grad(self.loss_G, fast_weights_B)
@@ -347,7 +353,7 @@ class MtGANModel(BaseModel):
                 
             #Meta-testing on the query set    
             self.fake_A_q, self.fake_B_q, self.idt_A_q, self.idt_B_q, self.gan_A_q, self.gan_B_q, self.rec_A_q, self.rec_B_q = self.forward_G(self.real_A_q, self.real_B_q, fast_weights_A, fast_weights_B, fast_weights_D_A, fast_weights_D_B)
-            self.loss_G_q = self.G_losses(self.real_A_q, self.real_B_q, self.idt_A_q, self.idt_B_q, self.gan_A_q, self.gan_B_q, self.rec_A_q, self.rec_B_q)
+            self.loss_G_q = self.G_losses(self.real_A_q, self.real_B_q, self.idt_A_q, self.idt_B_q, self.gan_A_q, self.gan_B_q, self.rec_A_q, self.rec_B_q, self.fake_A_q, self.fake_B_q)
            
             lossG_q +=  self.loss_G_q
             
@@ -467,7 +473,11 @@ class MtGANModel(BaseModel):
                 
                 self.loss_cycle_B = self.criterionCycle(self.rec_B, self.real_B) * lambda_B
                 
-                self.loss_G = self.loss_G_ATTACK + self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B
+                self.l2_B = self.criterionIdt(self.fake_B, self.real_B)
+
+                self.l2_A = self.criterionIdt(self.fake_A, self.real_A)
+                
+                self.loss_G = self.loss_G_ATTACK + self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B + self.l2_A + self.l2_B
                 self.loss_G.backward()
                 optimizer_G.step() 
                 
