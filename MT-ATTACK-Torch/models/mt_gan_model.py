@@ -53,7 +53,7 @@ class AttackLoss(torch.nn.Module):
             new_img_torch = output[0]
             return new_img_torch
 
-        Img0 = img_torch + torch.randn_like(img_torch) * 0.01
+        Img0 = img_torch + torch.randn_like(img_torch) * 0.1
         Img1 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 0.8+(np.random.rand()-0.5)*0.1) 
         Img2 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 1.2+(np.random.rand()-0.5)*0.1)
         Img3 = Resize(img_torch+torch.randn_like(img_torch) * 0.1, 0.6+(np.random.rand()-0.5)*0.1) 
@@ -86,7 +86,7 @@ class AttackLoss(torch.nn.Module):
         # Img26 = Rotation(Img3, (30+(np.random.rand()-0.5)*10)*math.pi/180)
         # Img27 = Rotation(Img3, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
         # TransImgs = torch.stack((img_torch,img_torch,img_torch,Img0,Img0,Img1,Img1,Img2,Img2,Img3,Img3,Img4,Img5,Img6,Img7,Img8,Img9,Img10,Img11,Img12,Img13,Img14,Img15,Img16,Img17,Img18,Img19,Img20,Img21,Img22,Img23,Img24,Img25,Img26,Img27, Img28, Img29, Img30, Img31),dim = 0)
-        TransImgs = torch.stack((img_torch,Img0),dim = 0)
+        TransImgs = torch.stack((img_torch,Img0,Img1),dim = 0)
 
         return TransImgs
 
@@ -114,7 +114,7 @@ class AttackLoss(torch.nn.Module):
 class PercepLoss(torch.nn.Module):
     def __init__(self):
         super(PercepLoss, self).__init__()
-        self.original_model = models.resnet50(pretrained=True)
+        self.original_model = models.vgg16(pretrained=True)
         self.criterionPercep = torch.nn.MSELoss()
         self.features = torch.nn.Sequential(
             # stop at conv4
