@@ -14,7 +14,7 @@ target=800
 input_label=215
 k_spt=1
 k_qry=1
-finetune_step=5000
+finetune_step=3000
 dist=1
 
 python train.py --meta_dataroot "image" --update_step 10 --gpu_ids $cuda --lambda_ATTACK_B $ATTACK  \
