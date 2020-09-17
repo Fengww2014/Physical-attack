@@ -172,8 +172,11 @@ class MtGANModel(BaseModel):
         self.criterionGAN = networks.GANLoss(opt.gan_mode).to(self.device)  
         self.criterionCycle = torch.nn.L1Loss()
         self.criterionIdt = torch.nn.L1Loss()
+
         self.criterionDist = torch.nn.L1Loss()
-        self.criterionATTACK = AttackLoss(opt.target, opt.ori)
+        self.target = opt.target
+        self.ori = opt.ori
+        self.criterionATTACK = AttackLoss(self.target, self.ori)
         self.optimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
         self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
         self.optimizers.append(self.optimizer_G)
