@@ -522,7 +522,7 @@ class MtGANModel(BaseModel):
                         log += ", {}: {:.4f}".format(tag, value)
                         # self.logger.scalar_summary(tag, value, k)
                     print(log)
-                if (k+1) % (self.finetune_step / 10) == 0 :
+                if (k+1) % 100 == 0 :
                     self.fake_B_q = netG_A(self.real_A_q) 
                     self.rec_A_q = netG_B(self.fake_B_q)  
                     self.fake_A_q = netG_B(self.real_B_q)  

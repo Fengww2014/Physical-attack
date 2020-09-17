@@ -5,7 +5,7 @@ ex_name=eot
 # model=attack_et_tar_gan
 crop_size=256
 load_size=286
-ATTACK=12
+ATTACK=11.5 # 12就是临界值
 niter=100
 niter_decay=100
 
@@ -14,7 +14,7 @@ target=800
 input_label=215
 k_spt=1
 k_qry=1
-finetune_step=3000
+finetune_step=4000
 dist=10
 
 python train.py --meta_dataroot "image" --update_step 10 --gpu_ids $cuda --lambda_ATTACK_B $ATTACK  \

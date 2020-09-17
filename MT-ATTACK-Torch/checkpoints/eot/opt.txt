@@ -8,7 +8,7 @@
                 direction: AtoB                          
                     epoch: latest                        
               epoch_count: 1                             
-            finetune_step: 3000                          	[default: 1000]
+            finetune_step: 4000                          	[default: 1000]
                  gan_mode: lsgan                         
                   gpu_ids: 0                             
                      imgc: 3                             
@@ -19,7 +19,7 @@
                     k_qry: 1                             	[default: 10]
                     k_spt: 1                             	[default: 10]
                  lambda_A: 10.0                          
-          lambda_ATTACK_B: 11.0                          	[default: 0.0]
+          lambda_ATTACK_B: 11.5                          	[default: 0.0]
                  lambda_B: 10.0                          
               lambda_dist: 10.0                          	[default: 0.0]
           lambda_identity: 5                             
