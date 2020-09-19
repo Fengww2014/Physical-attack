@@ -12,7 +12,7 @@ if __name__ == '__main__':
     opt.isTrain = False
     root = opt.meta_dataroot
     dictTrainAs, dictTrainBs, dataset_num = meta_preprocess(root)
-    for test_dataset_indx in range(dataset_num):
+    for test_dataset_indx in range(1):
         dataset = MetaDataloader(root, k_shot=opt.k_spt,
                             k_query=opt.k_qry,
                             batchsz=2000, resize=opt.load_size, crop_size = opt.crop_size, 
@@ -37,7 +37,9 @@ if __name__ == '__main__':
             
             model.finetunning(test_dataset_indx,opt.load_iter, j) 
             model.finetunning_withoutmeta(test_dataset_indx,opt.load_iter,j) 
-            model.plot_training_loss(test_dataset_indx)
+            model.plot_training_cyc_loss(j)
+            model.plot_training_attack_loss(j)
+            model.plot_training_dist_loss(j)
             
             
     

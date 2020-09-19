@@ -15,7 +15,7 @@ if __name__ == '__main__':
     for test_dataset_indx in range(1):
         dataset = MetaDataloader(root, k_shot=opt.k_spt,
                             k_query=opt.k_qry,
-                            batchsz=2000, resize=opt.load_size, crop_size = opt.crop_size, 
+                            batchsz=100, resize=opt.load_size, crop_size = opt.crop_size, 
                             test_dataset_indx= test_dataset_indx, dictTrainAs=dictTrainAs, dictTrainBs=dictTrainBs, dataset_num=dataset_num)  
         dataset_test = MetaTestDataloader(root, k_shot=opt.k_spt,
                             k_query=opt.k_qry,
@@ -42,10 +42,10 @@ if __name__ == '__main__':
             model.set_input(A_spt, B_spt, A_qry, B_qry)        
             model.meta_train(test_dataset_indx, total_iters)   
             print('========================== %d/%d ==============================' % (i,total_iters))
-            if total_iters % 100 == 0:   
-                for j, (A_spt, B_spt, A_qry, B_qry) in enumerate(dataset_loader_test): 
-                    model.set_input(A_spt, B_spt, A_qry, B_qry)         
-                    model.finetunning(test_dataset_indx, total_iters, j) 
+            # if total_iters % 100 == 0:   
+            #     for j, (A_spt, B_spt, A_qry, B_qry) in enumerate(dataset_loader_test): 
+            #         model.set_input(A_spt, B_spt, A_qry, B_qry)         
+            #         model.finetunning(test_dataset_indx, total_iters, j) 
             if total_iters % opt.save_latest_freq == 0:   
                     print('saving the latest model (dataset %d, total_iters %d)' % (test_dataset_indx, total_iters))
                     save_suffix = 'dataset_%d_iter_%d' % (test_dataset_indx, total_iters)

@@ -10,7 +10,7 @@ from torchvision.utils import save_image
 import os
 import numpy as np
 from  torch.nn import functional as F
-# from logger import Logger
+from logger import Logger
 import matplotlib
 import math
 
@@ -86,7 +86,7 @@ class AttackLoss(torch.nn.Module):
         # Img26 = Rotation(Img3, (30+(np.random.rand()-0.5)*10)*math.pi/180)
         # Img27 = Rotation(Img3, -(30+(np.random.rand()-0.5)*10)*math.pi/180)
         # TransImgs = torch.stack((img_torch,img_torch,img_torch,Img0,Img0,Img1,Img1,Img2,Img2,Img3,Img3,Img4,Img5,Img6,Img7,Img8,Img9,Img10,Img11,Img12,Img13,Img14,Img15,Img16,Img17,Img18,Img19,Img20,Img21,Img22,Img23,Img24,Img25,Img26,Img27, Img28, Img29, Img30, Img31),dim = 0)
-        TransImgs = torch.stack((img_torch,Img0,Img1),dim = 0)
+        TransImgs = torch.stack((img_torch,Img0,Img1,Img2,Img3,Img4),dim = 0)
 
         return TransImgs
 
@@ -114,7 +114,7 @@ class AttackLoss(torch.nn.Module):
 class PercepLoss(torch.nn.Module):
     def __init__(self):
         super(PercepLoss, self).__init__()
-        self.original_model = models.vgg16(pretrained=True)
+        self.original_model = models.resnet50(pretrained=True).cuda()
         self.criterionPercep = torch.nn.MSELoss()
         self.features = torch.nn.Sequential(
             # stop at conv4
@@ -124,8 +124,8 @@ class PercepLoss(torch.nn.Module):
         batch_size_cur = Images_r.shape[0]
         perceploss = 0.0
         for i in range(batch_size_cur):
-            I_r = Images_r[i,:].squeeze()
-            I_f = Images_f[i,:].squeeze()
+            I_r = Images_r[i,:] #.squeeze()
+            I_f = Images_f[i,:] #.squeeze()
             features_r = self.features(I_r)
             features_f = self.features(I_f)
             perceploss += self.criterionPercep(features_r, features_f)
@@ -177,6 +177,7 @@ class MtGANModel(BaseModel):
         self.target = opt.target
         self.ori = opt.ori
         self.criterionATTACK = AttackLoss(self.target, self.ori)
+        self.criterionPercepLoss = PercepLoss()
         self.optimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
         self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()), lr=opt.meta_lr, betas=(opt.beta1, 0.999))
         self.optimizers.append(self.optimizer_G)
@@ -194,10 +195,10 @@ class MtGANModel(BaseModel):
             test_save_path = os.path.join('./checkpoints',self.experiment_name, 'images/')
             if not os.path.exists(test_save_path): 
                 os.makedirs(test_save_path)
-        # self.log_dir = os.path.join('./checkpoints',self.experiment_name, 'logs')
-        # if not os.path.exists(self.log_dir): 
-        #     os.makedirs(self.log_dir)
-        # self.logger = Logger(self.log_dir)
+        self.log_dir = os.path.join('./checkpoints',self.experiment_name, 'logs')
+        if not os.path.exists(self.log_dir): 
+            os.makedirs(self.log_dir)
+        self.logger = Logger(self.log_dir)
     def set_input(self, real_A_support, real_B_support, real_A_query, real_B_query):
         # if random.choice([True, False]):
         if random.choice([True, True]):
@@ -231,7 +232,8 @@ class MtGANModel(BaseModel):
             self.loss_idt_A = 0
             self.loss_idt_B = 0
 
-      
+        # print("self.fake_B shape:", fake_B.shape)
+
         self.loss_G_A = self.criterionGAN(gan_A, True)
         
         self.loss_G_B = self.criterionGAN(gan_B, True)
@@ -243,6 +245,8 @@ class MtGANModel(BaseModel):
         self.l2_B = self.criterionDist(fake_B, real_B) * lambda_dist
 
         self.l2_A = self.criterionDist(fake_A, real_A) * lambda_dist
+
+        self.loss_Per_B = self.criterionPercepLoss(fake_B.unsqueeze(0),real_B.unsqueeze(0))
         
         ######
         # print("self.fake_B shape:", self.fake_B.shape)
@@ -252,7 +256,9 @@ class MtGANModel(BaseModel):
         else:
             self.loss_G_ATTACK = 0
         
-        loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_G_ATTACK + self.loss_idt_A + self.loss_idt_B + self.l2_A + self.l2_B
+        loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B \
+             + self.loss_G_ATTACK + self.loss_idt_A + self.loss_idt_B + self.l2_A + self.l2_B \
+                 + self.loss_Per_B
         # print("loss_G")
         return loss_G
 
@@ -352,11 +358,13 @@ class MtGANModel(BaseModel):
                 loss['G/loss_idt_B'] = self.loss_idt_B.item()
                 loss['G/loss_dist_B'] = self.l2_B.item()
                 loss['G/loss_dist_A'] = self.l2_A.item()
+                loss['G/loss_Per_B'] = self.loss_Per_B.item()
                 
                 if (k) % 5 == 0:
                     log = "Intra task training, test_dataset_indx [{}], Iteration [{}/{}/{}]".format(test_dataset_indx, total_iters, k, self.update_step)
                     for tag, value in loss.items():
                         log += ", {}: {:.4f}".format(tag, value)
+                        self.logger.scalar_summary(tag, value, k)
                     print(log)
                 
             #Meta-testing on the query set    
@@ -430,10 +438,11 @@ class MtGANModel(BaseModel):
         lossD_B_q = 0
         lossG_q = 0
         lambda_att_B = self.opt.lambda_ATTACK_B
+        lambda_dist = self.opt.lambda_dist
         lambda_idt = self.opt.lambda_identity
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
-        lambda_dist = self.opt.lambda_dist
+        
         for i in range(task_num):
             self.real_A = self.real_A_support[i]
             self.real_B = self.real_B_support[i]
@@ -447,6 +456,8 @@ class MtGANModel(BaseModel):
             print("[*] Samples saved: {}".format(x_B_path))
             
             self.mt_loss_cycle = []
+            self.mt_loss_attack = []
+            self.mt_loss_distance_real_B = []
             for k in range(1, self.finetune_step):
 
                 self.fake_B = netG_A(self.real_A) 
@@ -485,8 +496,12 @@ class MtGANModel(BaseModel):
                 self.l2_B = self.criterionIdt(self.fake_B, self.real_B) * lambda_dist
 
                 self.l2_A = self.criterionIdt(self.fake_A, self.real_A) * lambda_dist
+
+                self.loss_Per_B = self.criterionPercepLoss(self.fake_B.unsqueeze(0), self.real_B.unsqueeze(0))
                 
-                self.loss_G = self.loss_G_ATTACK + self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B + self.l2_A + self.l2_B
+                self.loss_G = self.loss_G_ATTACK + self.loss_G_A + self.loss_G_B + \
+                    self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + \
+                        self.loss_idt_B + self.l2_A + self.l2_B + self.loss_Per_B
                 self.loss_G.backward()
                 optimizer_G.step() 
                 
@@ -501,6 +516,8 @@ class MtGANModel(BaseModel):
 
                 
                 self.mt_loss_cycle.append((self.loss_cycle_B+self.loss_cycle_A).data.cpu().detach().numpy())
+                self.mt_loss_attack.append((self.loss_G_ATTACK).data.cpu().detach().numpy())
+                self.mt_loss_distance_real_B.append((self.l2_B).data.cpu().detach().numpy())
                 if (k) % 100 == 0:
                     loss = {}
                     loss['MTDA/loss'] = self.loss_D_A.item()
@@ -514,13 +531,14 @@ class MtGANModel(BaseModel):
                     loss['MTGB/loss_idt_B'] = self.loss_idt_B.item()
                     loss['MTG/loss_dist_B'] = self.l2_B.item()
                     loss['MTG/loss_dist_A'] = self.l2_A.item()
+                    loss['G/loss_Per_B'] = self.loss_Per_B.item()
            
                     
                     
                     log = "During fine tuning, test_dataset_indx [{}], Iteration [{}/{}/{}]".format(test_dataset_indx, total_iters, k, self.update_step)
                     for tag, value in loss.items():
                         log += ", {}: {:.4f}".format(tag, value)
-                        # self.logger.scalar_summary(tag, value, k)
+                        self.logger.scalar_summary(tag, value, k)
                     print(log)
                 if (k+1) % 100 == 0 :
                     self.fake_B_q = netG_A(self.real_A_q) 
@@ -561,6 +579,8 @@ class MtGANModel(BaseModel):
         lambda_idt = self.opt.lambda_identity
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
+        lambda_att_B = self.opt.lambda_ATTACK_B
+        lambda_dist = self.opt.lambda_dist
         
         for i in range(task_num):
             self.real_A = self.real_A_support[i]
@@ -576,6 +596,8 @@ class MtGANModel(BaseModel):
             save_image(self.denorm(self.real_B_q.data.cpu()), x_B_path)
             print("[*] Samples saved: {}".format(x_B_path))
             self.cyc_loss_cycle = []
+            self.cyc_loss_attack = []
+            self.cyc_loss_distance_real_B = []
             for k in range(1, self.finetune_step):
                 
                 self.fake_B = netG_A(self.real_A)  
@@ -597,6 +619,11 @@ class MtGANModel(BaseModel):
                 else:
                     self.loss_idt_A = 0
                     self.loss_idt_B = 0
+                
+                if lambda_att_B > 0:
+                    self.loss_G_ATTACK = self.criterionATTACK(self.fake_B)* lambda_att_B
+                else:
+                    self.loss_G_ATTACK = 0
 
                 
                 self.loss_G_A = self.criterionGAN(netD_A(self.fake_B), True)
@@ -606,8 +633,16 @@ class MtGANModel(BaseModel):
                 self.loss_cycle_A = self.criterionCycle(self.rec_A, self.real_A) * lambda_A
                 
                 self.loss_cycle_B = self.criterionCycle(self.rec_B, self.real_B) * lambda_B
+
+                self.l2_B = self.criterionIdt(self.fake_B, self.real_B) * lambda_dist
+
+                self.l2_A = self.criterionIdt(self.fake_A, self.real_A) * lambda_dist
+
+                self.loss_Per_B = self.criterionPercepLoss(self.fake_B.unsqueeze(0), self.real_B.unsqueeze(0))
                 
-                self.loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B
+                self.loss_G = self.loss_G_ATTACK + self.loss_G_A + self.loss_G_B + \
+                    self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + \
+                        self.loss_idt_B + self.l2_A + self.l2_B + self.loss_Per_B
                 self.loss_G.backward()
                 optimizer_G.step() 
                
@@ -622,6 +657,8 @@ class MtGANModel(BaseModel):
 
 
                 self.cyc_loss_cycle.append((self.loss_cycle_B+self.loss_cycle_A).data.cpu().detach().numpy())
+                self.cyc_loss_attack.append((self.loss_G_ATTACK).data.cpu().detach().numpy())
+                self.cyc_loss_distance_real_B.append((self.l2_B).data.cpu().detach().numpy())
                 if (k) % 100 == 0:
                     loss = {}
                     loss['CycleDA/loss'] = self.loss_D_A.item()
@@ -632,14 +669,18 @@ class MtGANModel(BaseModel):
                     loss['CycleGA/loss_G_B'] = self.loss_G_B.item()
                     loss['CycleGA/loss_cycle_B'] = self.loss_cycle_B.item()
                     loss['CycleGB/loss_idt_B'] = self.loss_idt_B.item()
+                    loss['CycleG/loss_dist_B'] = self.l2_B.item()
+                    loss['CycleG/loss_dist_A'] = self.l2_A.item()
+                    loss['CycleG/loss_Per_B'] = self.loss_Per_B.item()
+                    loss['MTGAN/loss_G_ATTACK'] = self.loss_G_ATTACK.item()
 
                     log = "During fine tuning without meta, test_dataset_indx [{}], Iteration [{}/{}/{}]".format(test_dataset_indx, total_iters, k, self.update_step)
                     for tag, value in loss.items():
                         log += ", {}: {:.4f}".format(tag, value)
-                        # self.logger.scalar_summary(tag, value, k)
+                        self.logger.scalar_summary(tag, value, k)
                     print(log)
                        
-                if (k+1) % 500 == 0:
+                if (k+1) % 100 == 0:
                     self.fake_B_q = netG_A(self.real_A_q)  
                     self.rec_A_q = netG_B(self.fake_B_q)   
                     self.fake_A_q = netG_B(self.real_B_q)  
@@ -651,8 +692,9 @@ class MtGANModel(BaseModel):
                     x_ABA_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_rec_A.png'.format(test_dataset_indx,k+1,total_iters2)) 
                     save_image(self.denorm(self.rec_A_q.data.cpu()), x_ABA_path)
                     x_BAB_path = os.path.join('./checkpoints',self.experiment_name, 'images/', '{}_{}_{}_ftwt_rec_B.png'.format(test_dataset_indx,k+1,total_iters2)) 
-                    save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)     
-    def plot_training_loss(self,test_dataset_indx):
+                    save_image(self.denorm(self.rec_B_q.data.cpu()), x_BAB_path)
+
+    def plot_training_cyc_loss(self,test_dataset_indx):
         plt.plot(range(self.finetune_step-1), self.cyc_loss_cycle, color='green', label='CycleGAN', linestyle='--')
         plt.plot(range(self.finetune_step-1), self.mt_loss_cycle, color='red', label='MT-GAN', linestyle='-')
         plt.xlabel("Step",fontsize=15)
@@ -661,5 +703,29 @@ class MtGANModel(BaseModel):
         plt.legend(fontsize=20)
         plt.savefig('logging_task{}.png'.format(test_dataset_indx))   
         plt.close()   
-        print('logging_task{} png has been saved'.format(test_dataset_indx))
+        print('logging_task_Cyc_Loss{} png has been saved'.format(test_dataset_indx))
+
+
+    def plot_training_attack_loss(self,test_dataset_indx):
+        plt.plot(range(self.finetune_step-1), self.cyc_loss_attack ,  color='green', label='CycleGAN', linestyle='--')
+        plt.plot(range(self.finetune_step-1), self.mt_loss_attack , color='red', label='MT-GAN', linestyle='-')
+        plt.xlabel("Step",fontsize=15)
+        plt.ylabel("Attack Loss",fontsize=15)
+        plt.grid()
+        plt.legend(fontsize=20)
+        plt.savefig('logging_task_Attack_Loss{}.png'.format(test_dataset_indx))   
+        plt.close()   
+        print('logging_task_Attack_Loss{} png has been saved'.format(test_dataset_indx))
+
+
+    def plot_training_dist_loss(self,test_dataset_indx):
+        plt.plot(range(self.finetune_step-1), self.cyc_loss_distance_real_B ,  color='green', label='CycleGAN', linestyle='--')
+        plt.plot(range(self.finetune_step-1), self.mt_loss_distance_real_B , color='red', label='MT-GAN', linestyle='-')
+        plt.xlabel("Step",fontsize=15)
+        plt.ylabel("Dist Loss",fontsize=15)
+        plt.grid()
+        plt.legend(fontsize=20)
+        plt.savefig('logging_task_Dist_Loss{}.png'.format(test_dataset_indx))   
+        plt.close()   
+        print('logging_task_Dist_Loss{} png has been saved'.format(test_dataset_indx))
     
